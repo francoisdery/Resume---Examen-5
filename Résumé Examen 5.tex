@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_US
+
 \documentclass[11pt, english]{memoir}
 
 \usepackage{babel}
@@ -46,10 +46,10 @@
 \newenvironment{proof}[1][Démonstration]{\noindent\ }{\ \rule{0.5em}{0.5em}}
 \newenvironment{exemple}
 {
-\begin{example} \normalfont \ \\ \indent
-}
-{
-\hfill\rule{0.5em}{0.5em}\end{example}
+	\begin{example} \normalfont \ \\ \indent
+	}
+	{
+		\hfill\rule{0.5em}{0.5em}\end{example}
 }
 
 \newenvironment{solution}
@@ -88,289 +88,294 @@
 
 
 \begin{document}
-
-\title{\normalfont\textbf{Exam 5 - Summary}}
-\author{François Déry}
-\date{}
-\maketitle
-
-{\color{black}\tableofcontents}
-
-
-\part{Ratemaking (\emph{Werner \& Modlin})}
-\chapter{Introduction}
-For every business having the goal of indefinitely operating, one should try and find the perfect balance of the following fundamental equation : 
-\begin{align*}
-\text{Price} = \text{Cost} + \text{Profit}
-\end{align*}
-For most of the non-insurance corporation, this process is relatively straight forward as they control every parameter of the equation. They can always try and reduce their production cost in order to gain profit or improve their competitiveness. The insurance market is different, as the insurer can't control their primary cost of doing business, ie the losses accompanying the insurance contracts they provide. Because of this particularity, insurers tend to write the \textbf{fundamental equation} as 
-\begin{tcolorbox}[ams align*]
-\text{UW Profit} = \text{Premium} - \text{Losses} - \text{LAE} - \text{UW Expenses}.
-\end{tcolorbox}
-Where "UW" stands for \emph{underwriting} and "LAE" stands for \emph{loss adjustment expenses}. Though out the chapter, the will be covered in more detail. 
-
-
-\section{AJOUTES LES PRINCIPES DE LA CAS DANS LE STATEMENT !!!!}
-
-
-\section{Exposure \& Premium}
-
-An exposure is the basic unit of risk that underlies the insurance premium. There are four different ways to measure exposures and premiums : 
-\begin{itemize}
-\item \textbf{Written} Exposure/Premium \\
-When we are in the written basis, we refer to all exposures and premium arising from policies issued during a specific period of time.
-\item \textbf{Earned}  Exposure/Premium \\
-On a \emph{earned} basis, we refer to the portion of exposures or premiums for which the insurance coverage has been provided, as of a certain point in time. 
-\item \textbf{Unearned}  Exposure/Premium \\
-As opposed to an earned basis, on a \emph{unearned} basis, we refer to the portion of exposures or premiums for which the insurance coverage has not been provided, as of a certain point in time. 
-\item \textbf{In-force}  Exposure/Premium \\
-When we refer to in-force exposure or premiums, we refer to the exposures or premiums exposed to loss (or for which the insurance coverage is provided) at a specific point in time.   
-\end{itemize}
-
-\section{Claims \& Losses}
-The text defines a claim as the demand for indemnification under the coverage of a policy. Note that a claim can be filed by an insured or by a third party alleging injuries or damages. Associated with a claim is a loss,  which is the amount of compensation for the claim. 
-
-An insurance company usually compiles claims on one of two metrics : \textbf{accident date} (date of loss, occurrence date) or \textbf{reported date}. 
-
-Claims that have occurred but are not yet reported to the insurer constitute the \textbf{IBNR (incurred but not reported) claims}. These have to be accounted for (ie as reserve of money) when calculating the \textbf{estimated ultimate losses}, as well as the \textbf{IBNER (incurred but not enough reported) claims}. 
-
-Finally, a reported loss can always be divided into two components : the \textbf{paid loss} and the \textbf{case reserve}. The paid loss is the amount that is already paid to the claimant, and the case reserve is the best estimation of what is left to be paid in order to close the claim. 
-
-
-\begin{tcolorbox}
-We calculate the total estimated ultimate losses as : 
-\begin{align*}
-\begin{minipage}{90pt}
-\begin{center}
-\textbf{Estimated Ultimate Losses}
-\end{center}
-\end{minipage}
-&= \textbf{Reported Losses + IBNR reserve + IBNER reserve},
-\end{align*}
-where $\text{reported losses} = \sum\big(\text{individual paid losses + case reserve}\big)$.
-\end{tcolorbox}
-
-
-In addition to paying money for compensation to the claimant, an insurer also incurs expenses in the process : \textbf{Loss adjustment expenses (LAE)}. These are separated into two categories : 
-\begin{itemize}
-\item \textbf{ALAE} : Allocated loss adjustment expenses;
-\item \textbf{ULAE} : Unallocated loss adjustment expenses.
-\end{itemize}
-ALAE are expenses incurred directly attributable to a specific claim, in contrast with ULAE that are expenses incurred from the general process of settling claims (for example, salaries to pay compensation experts). By definition, we have :
-\begin{align*}
-\textbf{LAE} = \textbf{ALAE} + \textbf{ULAE}
-\end{align*}
-
-\section{Underwriting Expenses}
-Just like the insurer incurs expenses to settle claims, it also incurs expenses in its underwriting process. These are generally separated into 4 categories : 
-\begin{itemize}
-\item Commissions and brokerage;
-\item General;
-\item Taxes, licenses and fees;
-\item Other acquisition.
-\end{itemize}
-
-Commissions and taxes are self-explanatory. We define other acquisition expenses everything other than commission and brokerage expenses that are directly linked to the process of acquiring business (publicity, mailing cost, etc.). The general expenses are every costs associated with the insurance operations, for example maintenance of the company's offices. 
-
-
-\section{Prospective Ratemaking \& Experience Adjustments}
-It is common practice in ratemaking to use historical data to predict future expected costs : \emph{this does mean actuaries are setting premium to recoup past losses}, as this would contradict the first principle of the CAS's statement of principles, which is "\emph{A rate is an estimate of the expected value of future costs}".
-
-So we can use historic loss experience in the estimation of future losses. With that said, it is important to remember that adjustments are necessary for the experience to accurately  predict future losses. Namely, we have to consider these potential factors : 
-\begin{itemize}
-\item Rate changes
-\item Operational changes 
-\item Inflationary pressures 
-\item Change in the mix of business
-\item Law changes
-\end{itemize}
-
-
-
-\section{Basic Insurance Ratios}
-Here are a few basic ratios that insurers use to monitor and evaluate the appropriateness of its rates. 
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Frequency}, bottomrule = 0mm, leftrule = 0mm, rightrule = 0mm, toprule = 0mm]
-Frequency mesures the rate at which claims occur. It is calculated as :
-\begin{align*}
-\textbf{Frequency} = \frac{\textbf{Number of Claims}}{\textbf{Number of Exposures}}.
-\end{align*}
-Usually, we would use the reported claims and the number of earned exposures. Analysis of frequency models can help measure the effectiveness of underwriting actions, such as deductibles. 
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Severity}, boxrule = 0mm]
-Severity is the measure of average costs per claim, and is calculated as : 
-\begin{align*}
-\textbf{Severity} = \frac{\textbf{Losses}}{\textbf{Number of Claims}}.
-\end{align*}
-We would calculate the paid severity using paid losses on closed claims, divided by the number of closed claims, and the reported severity using reported losses and claims. ALAE can be included or excluded from calculations. \\
-
-Analysis of severity models helps the understanding loss trends. 
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Pure Premium}, boxrule = 0mm]
-\begin{align*}
-\textbf{Pure Premium} = \frac{\textbf{Losses}}{\textbf{Number of Exposures}} = \textbf{Frequency} \times \textbf{Severity}.
-\end{align*}
-Also known as loss cost or burning cost, it measures the average loss per exposure.  
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Average Premium}, boxrule = 0mm]
-\begin{align*}
-\textbf{Average Premium} = \frac{\textbf{Premium}}{\textbf{Number of Exposures}}.
-\end{align*}
-The average premium can be calculated using earned premium and exposures as well as written or in force exposure, depending on what is analyzed. Both premium and exposures have to be on the same basis. \\
-
-If adjusted for rate changes, changes in average premium highlight changes in the mix of business written. 
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Loss Ratio}, boxrule = 0mm]
-\begin{align*}
-\textbf{Loss Ratio} = \frac{\textbf{Losses}}{\textbf{Premium}}.
-\end{align*}
-A loss ratio measures the portion of each premium dedicated to paying losses. Typically, earned premiums and reported losses used. Sometimes, LAE are included in the losses, forming a loss and LAE ratio, which would be : 
-\begin{align*}
-\textbf{Loss and LAE Ratio} = \frac{\textbf{Losses} + \textbf{LAE}}{\textbf{Premium}} = \textbf{LR}(1+\textbf{LAE ratio}).
-\end{align*}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Loss Adjustment Ratio}, boxrule = 0mm]
-\begin{align*}
-\textbf{LAE Ratio} = \frac{\textbf{LAE}}{\textbf{Losses}} .
-\end{align*}
-Usually, analysis of LAE Ratio if made to monitor the effectiveness of the claim settlement process. 
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Underwriting Expense Ratio}, boxrule = 0mm]
-\begin{align*}
-\textbf{UW Expense Ratio} = \frac{\textbf{UW Expenses}}{\textbf{Premium}} .
-\end{align*}
-It is important to note that the basis of premiums will depend on the type of underwriting expenses analyzed. 
-\begin{itemize}
-\item For commissions, other acquisitions and taxes, we would use \emph{written premiums}, the reasoning being that no matter if the policies remains in force the total duration of its term, we will pay those expenses in full. Hence the use of written premiums.
-\item For general expenses, we would use \emph{earned premiums}, since you want to evaluate theses expenses with the amount of premiums the company is actually earning. 
-\end{itemize}
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Operating Expenses Ratio (OER)}, boxrule = 0mm]
-\begin{align*}
-\textbf{OER} = \textbf{UW Expense Ratio} + \frac{\textbf{LAE}}{\textbf{Earned Premiums}} .
-\end{align*}
-This ratio measures the overall portion of premiums used to pay for all the company's expenses except the actual losses coming from claims. \\
-
-It's important to note that in this definition, earned premiums are used in the calculation of the underwriting expense ratio. 
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Combined Ratio}, boxrule = 0mm]
-\begin{align*}
-\textbf{Combined Ratio} = \textbf{Loss Ratio} + \frac{\textbf{Underwriting Expenses}}{\textbf{Written Premiums}} + \frac{\textbf{LAE}}{\textbf{Earned Premiums}} .
-\end{align*}
-If we were to use earned premiums instead of written premiums in the underwriting expense ratio, we could also write the combined ratio as 
-\begin{align*}
-\textbf{Combined Ratio} = \textbf{Loss Ratio} + \textbf{OER}.
-\end{align*}
-In calculating the combined ratio, the loss ratio should not include LAE, since we would consider theses expenses twice. Obviously, you always want a combined ratio under 100\%, otherwise you are losing money in operating the business. 
-\end{tcolorbox}
-
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Renewal/Retention Ratio}, boxrule = 0mm]
-Retention and renewal ratios are the rate at which insureds renew their policies. There are a small difference in their definition. We define a renewal ratio as 
-\begin{align*}
-\textbf{Renewal Ratio} =  \frac{\textbf{Number of Policies Renewed}}{\textbf{All expiring written policies}}.
-\end{align*}
-A renewal ratio doesn't take into account cancellations of policies during their term, it only looks at how many policies renewed from the pool of policies that would have come to expire. As opposed to that, a retention ratio is defined as 
-\begin{align*}
-\textbf{Retention Ratio} = \frac{\textbf{Number of Policies Renewed}}{\textbf{Number of Potential Renewal Policies}}.
-\end{align*}
-As we can see, a retention ratio only takes into account policies which were available for renewal, hence not considering policies that canceled their coverage during their term. It is a conditional version of a renewal ratio
-\end{tcolorbox}
-
-
-\begin{tcolorbox}[adjusted title = \textbf{Close Ratio}, boxrule = 0mm]
-\begin{align*}
-\textbf{Close Ratio} = \frac{\textbf{Number of Accepted Quotes}}{\textbf{Number of Quotes}}.
-\end{align*}
-The close ratio measures the competitiveness of the company's rates on the market for new business. 
-\end{tcolorbox}
-
-
-
-
-\chapter{Rating Manuals}
-
-\chapter{Ratemaking Data}
-
-\section{Data Aggregation}
+	
+	\title{\normalfont\textbf{Exam 5 - Summary}}
+	\author{François Déry}
+	\date{}
+	\maketitle
+	
+	{\color{black}\tableofcontents}
+	
+	
+	\part{Ratemaking (\emph{Werner \& Modlin})}
+	\chapter{Introduction}
+	For every business having the goal of indefinitely operating, one should try and find the perfect balance of the following fundamental equation : 
+	\begin{align*}
+	\text{Price} = \text{Cost} + \text{Profit}
+	\end{align*}
+	For most of the non-insurance corporation, this process is relatively straight forward as they control every parameter of the equation. They can always try and reduce their production cost in order to gain profit or improve their competitiveness. The insurance market is different, as the insurer can't control their primary cost of doing business, ie the losses accompanying the insurance contracts they provide. Because of this particularity, insurers tend to write the \textbf{fundamental equation} as 
+	\begin{tcolorbox}[ams align*]
+		\text{UW Profit} = \text{Premium} - \text{Losses} - \text{LAE} - \text{UW Expenses}.
+	\end{tcolorbox}
+	Where "UW" stands for \emph{underwriting} and "LAE" stands for \emph{loss adjustment expenses}. Though out the chapter, the will be covered in more detail. 
+	
+	
+	\section{ADD THE CAS STATEMENT'S PRINCIPLES!!!!}
+	
+	
+	\section{Exposure \& Premium}
+	
+	An exposure is the basic unit of risk that underlies the insurance premium. There are four different ways to measure exposures and premiums : 
+	\begin{itemize}
+		\item \textbf{Written} Exposure/Premium \\
+		When we are in the written basis, we refer to all exposures and premium arising from policies issued during a specific period of time.
+		\item \textbf{Earned}  Exposure/Premium \\
+		On a \emph{earned} basis, we refer to the portion of exposures or premiums for which the insurance coverage has been provided, as of a certain point in time. 
+		\item \textbf{Unearned}  Exposure/Premium \\
+		As opposed to an earned basis, on a \emph{unearned} basis, we refer to the portion of exposures or premiums for which the insurance coverage has not been provided, as of a certain point in time. 
+		\item \textbf{In-force}  Exposure/Premium \\
+		When we refer to in-force exposure or premiums, we refer to the exposures or premiums exposed to loss (or for which the insurance coverage is provided) at a specific point in time.   
+	\end{itemize}
+	
+	\section{Claims \& Losses}
+	The text defines a claim as the demand for indemnification under the coverage of a policy. Note that a claim can be filed by an insured or by a third party alleging injuries or damages. Associated with a claim is a loss,  which is the amount of compensation for the claim. 
+	
+	An insurance company usually compiles claims on one of two metrics : \textbf{accident date} (date of loss, occurrence date) or \textbf{reported date}. 
+	
+	Claims that have occurred but are not yet reported to the insurer constitute the \textbf{IBNR (incurred but not reported) claims}. These have to be accounted for (ie as reserve of money) when calculating the \textbf{estimated ultimate losses}, as well as the \textbf{IBNER (incurred but not enough reported) claims}. 
+	
+	Finally, a reported loss can always be divided into two components : the \textbf{paid loss} and the \textbf{case reserve}. The paid loss is the amount that is already paid to the claimant, and the case reserve is the best estimation of what is left to be paid in order to close the claim. 
+	
+	
+	\begin{tcolorbox}
+		We calculate the total estimated ultimate losses as : 
+		\begin{align*}
+		\begin{minipage}{90pt}
+		\begin{center}
+		\textbf{Estimated Ultimate Losses}
+		\end{center}
+		\end{minipage}
+		&= \textbf{Reported Losses + IBNR reserve + IBNER reserve},
+		\end{align*}
+		where $\text{reported losses} = \sum\big(\text{individual paid losses + case reserve}\big)$.
+	\end{tcolorbox}
+	
+	
+	In addition to paying money for compensation to the claimant, an insurer also incurs expenses in the process : \textbf{Loss adjustment expenses (LAE)}. These are separated into two categories : 
+	\begin{itemize}
+		\item \textbf{ALAE} : Allocated loss adjustment expenses;
+		\item \textbf{ULAE} : Unallocated loss adjustment expenses.
+	\end{itemize}
+	ALAE are expenses incurred directly attributable to a specific claim, in contrast with ULAE that are expenses incurred from the general process of settling claims (for example, salaries to pay compensation experts). By definition, we have :
+	\begin{align*}
+	\textbf{LAE} = \textbf{ALAE} + \textbf{ULAE}
+	\end{align*}
+	
+	\section{Underwriting Expenses}
+	Just like the insurer incurs expenses to settle claims, it also incurs expenses in its underwriting process. These are generally separated into 4 categories : 
+	\begin{itemize}
+		\item Commissions and brokerage;
+		\item General;
+		\item Taxes, licenses and fees;
+		\item Other acquisition.
+	\end{itemize}
+	
+	Commissions and taxes are self-explanatory. We define other acquisition expenses everything other than commission and brokerage expenses that are directly linked to the process of acquiring business (publicity, mailing cost, etc.). The general expenses are every costs associated with the insurance operations, for example maintenance of the company's offices. 
+	
+	
+	\section{Prospective Ratemaking \& Experience Adjustments}
+	It is common practice in ratemaking to use historical data to predict future expected costs : \emph{this does mean actuaries are setting premium to recoup past losses}, as this would contradict the first principle of the CAS's statement of principles, which is "\emph{A rate is an estimate of the expected value of future costs}".
+	
+	So we can use historic loss experience in the estimation of future losses. With that said, it is important to remember that adjustments are necessary for the experience to accurately  predict future losses. Namely, we have to consider these potential factors : 
+	\begin{itemize}
+		\item Rate changes
+		\item Operational changes 
+		\item Inflationary pressures 
+		\item Change in the mix of business
+		\item Law changes
+	\end{itemize}
+	
+	
+	
+	\section{Basic Insurance Ratios}
+	Here are a few basic ratios that insurers use to monitor and evaluate the appropriateness of its rates. 
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Frequency}, bottomrule = 0mm, leftrule = 0mm, rightrule = 0mm, toprule = 0mm]
+		Frequency mesures the rate at which claims occur. It is calculated as :
+		\begin{align*}
+		\textbf{Frequency} = \frac{\textbf{Number of Claims}}{\textbf{Number of Exposures}}.
+		\end{align*}
+		Usually, we would use the reported claims and the number of earned exposures. Analysis of frequency models can help measure the effectiveness of underwriting actions, such as deductibles. 
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Severity}, boxrule = 0mm]
+		Severity is the measure of average costs per claim, and is calculated as : 
+		\begin{align*}
+		\textbf{Severity} = \frac{\textbf{Losses}}{\textbf{Number of Claims}}.
+		\end{align*}
+		We would calculate the paid severity using paid losses on closed claims, divided by the number of closed claims, and the reported severity using reported losses and claims. ALAE can be included or excluded from calculations. \\
+		
+		Analysis of severity models helps the understanding loss trends. 
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Pure Premium}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{Pure Premium} = \frac{\textbf{Losses}}{\textbf{Number of Exposures}} = \textbf{Frequency} \times \textbf{Severity}.
+		\end{align*}
+		Also known as loss cost or burning cost, it measures the average loss per exposure.  
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Average Premium}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{Average Premium} = \frac{\textbf{Premium}}{\textbf{Number of Exposures}}.
+		\end{align*}
+		The average premium can be calculated using earned premium and exposures as well as written or in force exposure, depending on what is analyzed. Both premium and exposures have to be on the same basis. \\
+		
+		If adjusted for rate changes, changes in average premium highlight changes in the mix of business written. 
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Loss Ratio}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{Loss Ratio} = \frac{\textbf{Losses}}{\textbf{Premium}}.
+		\end{align*}
+		A loss ratio measures the portion of each premium dedicated to paying losses. Typically, earned premiums and reported losses used. Sometimes, LAE are included in the losses, forming a loss and LAE ratio, which would be : 
+		\begin{align*}
+		\textbf{Loss and LAE Ratio} = \frac{\textbf{Losses} + \textbf{LAE}}{\textbf{Premium}} = \textbf{LR}(1+\textbf{LAE ratio}).
+		\end{align*}
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Loss Adjustment Ratio}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{LAE Ratio} = \frac{\textbf{LAE}}{\textbf{Losses}} .
+		\end{align*}
+		Usually, analysis of LAE Ratio if made to monitor the effectiveness of the claim settlement process. 
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Underwriting Expense Ratio}, boxrule = 0mm]
+		If we want to calculate the underwriting expense ratio for all underwriting expenses, than we would do 
+		\begin{align*}
+		\textbf{UW Expense Ratio} = \frac{\textbf{Commission} + \textbf{Taxes} + \textbf{Other}}{\textbf{Written Premium}} + \frac{\textbf{General Expenses}}{\textbf{Earned Premium}}.
+		\end{align*}
+		
+		If we want to calculate the ratio for a specific type of underwriting expense, it is important to note that the basis of premiums will depend on the type of underwriting expenses analyzed. In general, the ratio is
+		\begin{align*}
+		\textbf{UW Expense Ratio} = \frac{\textbf{UW Expenses}}{\textbf{Premium}} .
+		\end{align*}
+		\begin{itemize}
+			\item For commissions, other acquisitions and taxes, we use \emph{written premiums}, the reasoning being that no matter if the policies remains in force the total duration of its term, we will pay those expenses in full. Hence the use of written premiums.
+			\item For general expenses, we use \emph{earned premiums}, since you want to evaluate theses expenses with the amount of premiums the company is actually earning. 
+		\end{itemize}
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Operating Expenses Ratio (OER)}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{OER} = \textbf{UW Expense Ratio} + \frac{\textbf{LAE}}{\textbf{Earned Premiums}} .
+		\end{align*}
+		This ratio measures the overall portion of premiums used to pay for all the company's expenses except the actual losses coming from claims. \\
+		
+		It's important to note that in this definition, earned premiums are used in the calculation of the underwriting expense ratio. 
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Combined Ratio}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{Combined Ratio} = \textbf{Loss Ratio} + \frac{\textbf{Underwriting Expenses}}{\textbf{Written Premiums}} + \frac{\textbf{LAE}}{\textbf{Earned Premiums}} .
+		\end{align*}
+		If we were to use earned premiums instead of written premiums in the underwriting expense ratio, we could also write the combined ratio as 
+		\begin{align*}
+		\textbf{Combined Ratio} = \textbf{Loss Ratio} + \textbf{OER}.
+		\end{align*}
+		In calculating the combined ratio, the loss ratio should not include LAE, since we would consider theses expenses twice. Obviously, you always want a combined ratio under 100\%, otherwise you are losing money in operating the business. 
+	\end{tcolorbox}
+	
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Renewal/Retention Ratio}, boxrule = 0mm]
+		Retention and renewal ratios are the rate at which insureds renew their policies. There are a small difference in their definition. We define a renewal ratio as 
+		\begin{align*}
+		\textbf{Renewal Ratio} =  \frac{\textbf{Number of Policies Renewed}}{\textbf{All expiring written policies}}.
+		\end{align*}
+		A renewal ratio doesn't take into account cancellations of policies during their term, it only looks at how many policies renewed from the pool of policies that would have come to expire. As opposed to that, a retention ratio is defined as 
+		\begin{align*}
+		\textbf{Retention Ratio} = \frac{\textbf{Number of Policies Renewed}}{\textbf{Number of Potential Renewal Policies}}.
+		\end{align*}
+		As we can see, a retention ratio only takes into account policies which were available for renewal, hence not considering policies that canceled their coverage during their term. It is a conditional version of a renewal ratio
+	\end{tcolorbox}
+	
+	
+	\begin{tcolorbox}[adjusted title = \textbf{Close Ratio}, boxrule = 0mm]
+		\begin{align*}
+		\textbf{Close Ratio} = \frac{\textbf{Number of Accepted Quotes}}{\textbf{Number of Quotes}}.
+		\end{align*}
+		The close ratio measures the competitiveness of the company's rates on the market for new business. 
+	\end{tcolorbox}
+	
+	
+	
+	
+	\chapter{Rating Manuals}
+	
+	\chapter{Ratemaking Data}
+	
+	\section{Data Aggregation}
 	In order to perform ratemaking analysis, policy, claims and accounting data must be aggregated. There are three general abjectives when aggregating : 
-
+	
 	\begin{enumerate}
 		\item Accurately match losses and premium for the policy
 		\item Use the most recent data available
 		\item Minimize the cost of data collection and retrieval
 	\end{enumerate}
-
-	There are four common methods of data aggregation : calendar year, accident year, policy year and reported year. 
-
-	\subsection{Calendar year}
-		This method considers all premium, exposure and loss transaction that occur during a twelve month calendar year, \emph{without regard to the effective date of policy insurance, the accident date or the report date of the claim}. Hence, at the end of the calendar year, earned premiums and exposures are fixed (since all future premiums and exposure will be earned in the next calendar year). 
 	
-		For reported loss, when aggregating in calendar year they are equal to all losses paid during the twelve month period, plus the change in case reserve. In math, it looks like : 
-		\begin{align*}
-			\text{Reported Losses} = \text{Paid Losses} + (\text{Case Reserve}_{fin} - \text{Case Reserve}_{ini})
-		\end{align*}
-
-
-		\textbf{Advantages} of the method are :
-		\begin{enumerate}
-			\item Data is available as soon as the calendar year ends;
-			\item Very few cost of collection and retrieval. 
-		\end{enumerate}
-
-		\textbf{Disadvantages} of the method are : 
-		\begin{enumerate}
-			\item There is a time mismatch between premiums and losses, as losses may include payment and reserve changes from policies issued years ago. 
-		\end{enumerate}
-
-		One would use calendar year for lines of business with relatively quick loss developments. 
-
-
+	There are four common methods of data aggregation : calendar year, accident year, policy year and reported year. 
+	
+	\subsection{Calendar year}
+	This method considers all premium, exposure and loss transaction that occur during a twelve month calendar year, \emph{without regard to the effective date of policy insurance, the accident date or the report date of the claim}. Hence, at the end of the calendar year, earned premiums and exposures are fixed (since all future premiums and exposure will be earned in the next calendar year). 
+	
+	For reported loss, when aggregating in calendar year they are equal to all losses paid during the twelve month period, plus the change in case reserve. In math, it looks like : 
+	\begin{align*}
+	\text{Reported Losses} = \text{Paid Losses} + (\text{Case Reserve}_{fin} - \text{Case Reserve}_{ini})
+	\end{align*}
+	
+	
+	\textbf{Advantages} of the method are :
+	\begin{enumerate}
+		\item Data is available as soon as the calendar year ends;
+		\item Very few cost of collection and retrieval. 
+	\end{enumerate}
+	
+	\textbf{Disadvantages} of the method are : 
+	\begin{enumerate}
+		\item There is a time mismatch between premiums and losses, as losses may include payment and reserve changes from policies issued years ago. 
+	\end{enumerate}
+	
+	One would use calendar year for lines of business with relatively quick loss developments. 
+	
+	
 	\subsection{Accident year}
 	Using this aggregation, premiums and exposures follow the same logic as in a calendar year aggregation ; the difference comes in the aggregation of losses. Whereas in calendar year you would only compiled losses that were incurred during the year, in accident year losses are always associated with their respective accident year. So if an accident happens in 2017, losses from this specific event will always be counted in the losses of the 2017 calendar year. This difference makes it so that losses are not set at the end of a calendar year, as they are likely to develop further in time.
-
+	
 	\textbf{Advantages} of the method are :
 	\begin{enumerate}
 		\item Better match between premiums and losses, as premiums earned during a calendar year are compared to losses that occurred in the same year;
 		\item Few cost of collection and retrieval.
 	\end{enumerate}
-
+	
 	\textbf{Disadvantages} of the method are : 
 	\begin{enumerate}
 		\item Since losses can develop at the end of the year, their development has to be estimated. The other option would be to wait for the development to end, which would take way to much time in certain line of business. 
 		\item As a consequence of the first disadvantage, statistics from a calendar year are bound to evolve as losses from that year develop. 
 	\end{enumerate}
-
-
-
+	
+	
+	
 	\subsection{Reported year}
 	This method works exactly the same as accident year, with one small difference. Instead of using the accident year, the reported year of claims is used to aggregate losses. This is primarily used for commercial line products while using claims-made policies. Other that that, it has the same advantages and disadvantages as accident year aggregation.. 
-
-
-
+	
+	
+	
 	\subsection{Policy year}
 	Also known as underwriting year, this method considers all premiums and losses associated with policies written during a twelve-month period. So all the premiums, exposures and losses of a policy written on December 30th 2017 would be considered in the year 2017, even though most (almost all) of its premiums would be earned in the calendar year 2018. 
 	
 	This specificity makes this method the best at matching premiums and losses, as they are always associated with each other. On the other hand, it also makes it the slowest to develop, since premiums from the policy year 2017 wont be fully earned until December 31th 2018, 24 months after the start of the policy year. 
-
+	
 	\textbf{Advantages} of the method are :
 	\begin{enumerate}
 		\item Best match possible between premiums and losses
@@ -381,44 +386,44 @@ The close ratio measures the competitiveness of the company's rates on the marke
 		\item Data takes 24 months from the start of the policy year to be fully available. 
 		\item Losses development has to be taken into account, so results from a policy year are bound to evolve until losses from the policy year are done developing. 
 	\end{enumerate}
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Exposures}
-
-\section{Criteria For Exposure Bases}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\chapter{Exposures}
+	
+	\section{Criteria For Exposure Bases}
 	A good exposure base should meet the three following criteria :
 	\begin{enumerate}
-	\item Being \textbf{directly proportional to the expected loss};
-	\item Be \textbf{practical};
-	\item Consider \textbf{preexisting exposure base and historical data}.
+		\item Being \textbf{directly proportional to the expected loss};
+		\item Be \textbf{practical};
+		\item Consider \textbf{preexisting exposure base and historical data}.
 	\end{enumerate}
 	
 	\subsection{Proportional to Expected Loss}
-		All else being equal, the expected loss of a policy with two exposures should be twice as high as the one of a one exposure policy. In general, the factor with the most direct relationship to the losses is used as the exposure base. 
-		
-		For example, for home insurance, the expected loss of a home insured for two years is twice the expected amount of the same home insured one year. We could say that the expected losses also vary with the value of a home, but while a 200 000\$ home has higher expected losses, it's nor necessarily twice as high as a 100 000\$ home. Hence, the number of house year is selected as exposure base, while the home's value is used as a rating variable.  
+	All else being equal, the expected loss of a policy with two exposures should be twice as high as the one of a one exposure policy. In general, the factor with the most direct relationship to the losses is used as the exposure base. 
+	
+	For example, for home insurance, the expected loss of a home insured for two years is twice the expected amount of the same home insured one year. We could say that the expected losses also vary with the value of a home, but while a 200 000\$ home has higher expected losses, it's nor necessarily twice as high as a 100 000\$ home. Hence, the number of house year is selected as exposure base, while the home's value is used as a rating variable.  
 	
 	\subsection{Practical}
-		The exposure base should be objective and relatively easy to obtain and verify. It should not allow for moral hazard from policyholders or underwriters (manipulating the exposure base for their own benefit). 
-		
-		For example, in auto insurance, the exposure base being the most proportional to expected losses is the yearly mileage of the vehicle. That being said, it's very hard for insurers to verify without reasonable doubt (although the technology is getting there). Hence, the most practical exposure base is still the vehicle year. 
+	The exposure base should be objective and relatively easy to obtain and verify. It should not allow for moral hazard from policyholders or underwriters (manipulating the exposure base for their own benefit). 
+	
+	For example, in auto insurance, the exposure base being the most proportional to expected losses is the yearly mileage of the vehicle. That being said, it's very hard for insurers to verify without reasonable doubt (although the technology is getting there). Hence, the most practical exposure base is still the vehicle year. 
 	
 	\subsection{Historical Precedence}
-		Any changes to the exposure base can lead to large premium swings for individual insureds and requires major changes in the rating algorithm. Also, the company might not have the historical data in order to use its experience in the ratemaking process. 
+	Any changes to the exposure base can lead to large premium swings for individual insureds and requires major changes in the rating algorithm. Also, the company might not have the historical data in order to use its experience in the ratemaking process. 
 	
 	\subsection{Common Exposure Bases by Line of Business}
-		Here are the most used exposure bases by line of business. 
+	Here are the most used exposure bases by line of business. 
 	
-		\begin{tabular}{ll}
+	\begin{tabular}{ll}
 		\toprule[1pt]
 		\textbf{Line of Business} & \textbf{Typical Exposure Base}\\
 		\midrule[1pt]
@@ -431,55 +436,55 @@ The close ratio measures the competitiveness of the company's rates on the marke
 		Professional Liability & Number of Professionals (ex: Lawyers, Accountants, etc.)\\
 		Personal Articles Floaters & Value of Item\\
 		\bottomrule[1pt]\\
-		\end{tabular}
-
-
-
-\section{Aggregation of Exposures (One-year Policies)}
+	\end{tabular}
+	
+	
+	
+	\section{Aggregation of Exposures (One-year Policies)}
 	When aggregating exposures, only two methods are applicable : calendar and policy year. Here is how one would aggregates the different types of exposures (written, earned, in-force) using both methods. 
-
+	
 	\subsection{Written Exposures}
 	
-		Written exposures are the total exposures arising from policies written during the period. For example, if a one-year policy is written on May 21st 2017, this would count as one exposure in calendar year 2017 and policy year 2017. The difference between the two methods of aggregation comes with cancellations of policies. For example, let consider a one-year policy written on June 30th 2017 that canceled on April 1st 2018. 
+	Written exposures are the total exposures arising from policies written during the period. For example, if a one-year policy is written on May 21st 2017, this would count as one exposure in calendar year 2017 and policy year 2017. The difference between the two methods of aggregation comes with cancellations of policies. For example, let consider a one-year policy written on June 30th 2017 that canceled on April 1st 2018. 
 	
-		When working in \textbf{policy year}, we would book both the original written exposure and the exposure due to cancellation in 2017. At the end of the policy year, this policy would account for $(1-\frac{\text{3 remaining months}}{\text{12 months}}) = \frac{9}{12}$ exposure.
+	When working in \textbf{policy year}, we would book both the original written exposure and the exposure due to cancellation in 2017. At the end of the policy year, this policy would account for $(1-\frac{\text{3 remaining months}}{\text{12 months}}) = \frac{9}{12}$ exposure.
 	
-		In contrast, when working in \textbf{calendar year}, the original written exposure and the exposure due to cancellation would not be booked in the same year, since the events didn't happen in the same calendar year. So this policy would account for 1 exposure in 2017 and $(-\frac{\text{3 remaining months}}{\text{12 months}}) = -0.25$ exposures in 2018. 
+	In contrast, when working in \textbf{calendar year}, the original written exposure and the exposure due to cancellation would not be booked in the same year, since the events didn't happen in the same calendar year. So this policy would account for 1 exposure in 2017 and $(-\frac{\text{3 remaining months}}{\text{12 months}}) = -0.25$ exposures in 2018. 
 	
 	
 	\subsection{Earned Exposures}
-		Earned exposures represent the portion of the written exposures for which the insurance coverage has already been provided. Usually, we assume that the probability of claims is evenly distributed throughout a year, so that we can use the portion of time that passed since writing of the policy as a basis. 
+	Earned exposures represent the portion of the written exposures for which the insurance coverage has already been provided. Usually, we assume that the probability of claims is evenly distributed throughout a year, so that we can use the portion of time that passed since writing of the policy as a basis. 
 	
-		For \textbf{policy year}, earned exposures are easy. Assuming that the policy year is completed, earned and written exposures are the same, since they are both counted in the same year. If the policy year isn't over when calculations occur, than we would use the portion of time that passed since the writing of the policy as earned exposures. For example, if calculations of earned exposure for policy year 2017 were made on June 30th 2018, a one-year policy written on October 1st 2017 would have 9/12 exposures.
+	For \textbf{policy year}, earned exposures are easy. Assuming that the policy year is completed, earned and written exposures are the same, since they are both counted in the same year. If the policy year isn't over when calculations occur, than we would use the portion of time that passed since the writing of the policy as earned exposures. For example, if calculations of earned exposure for policy year 2017 were made on June 30th 2018, a one-year policy written on October 1st 2017 would have 9/12 exposures.
 	
-		For \textbf{calendar year}, things are a little more complicated. We should only consider the exposure earned in the calendar year. So for the same one-year policy written on October 1st, we would only count the exposure in the months of October, November and December as earned in 2017. The rest of the exposure would be counted in 2018. Obviously, earned exposures are rarely the same as written exposures for a specific policy. 
+	For \textbf{calendar year}, things are a little more complicated. We should only consider the exposure earned in the calendar year. So for the same one-year policy written on October 1st, we would only count the exposure in the months of October, November and December as earned in 2017. The rest of the exposure would be counted in 2018. Obviously, earned exposures are rarely the same as written exposures for a specific policy. 
 	
 	
 	
 	\subsection{In-Force Exposure}
-		These exposure counts the number of insured risk that are exposed to claiming at a specific point in time. On a typical exposure graph (with time a X-axis and \% of policy term expired on the Y-axis) then we'd count all the policies that cross a straight vertical line at a given point 
+	These exposure counts the number of insured risk that are exposed to claiming at a specific point in time. On a typical exposure graph (with time a X-axis and \% of policy term expired on the Y-axis) then we'd count all the policies that cross a straight vertical line at a given point 
 	
-
-\section{Aggregating With Other Policy Terms}
+	
+	\section{Aggregating With Other Policy Terms}
 	All of the preceding definition and examples were based on one-year policies, but in reality terms can be longer or shorter that a year. Assuming we are working with a policy-year base exposure, here are the main adaptation made when working with other terms : 
 	\begin{itemize}
 		\item When working with \textbf{written} exposures, all of the policies represent one-half of the written exposure of a one-year policy. Hence, a 6 months policy would represent 0.5 exposure and a two-year policy would be 2 exposures. \\
 		\item For \textbf{in-force} exposures, each policy can contribute to \emph{one in-force exposure}, no matter the policy term. 
 	\end{itemize}
-
-\section{Calculation of Blocks of Experience}
+	
+	\section{Calculation of Blocks of Experience}
 	Companies don't always have detailed information about policies. For example, they might have the informations summarized on a monthly or quarterly basis. When such a situation happens, insurers usually work as if \emph{all policies were written on the mid-point of the period}. This is a good approximation only when policies are written evenly throughout the period. Hence, the shorter the period, the more likely this assumption is accurate. 
-
+	
 	As a quick example, if informations are summarized by month, we would assume that all of the policies written in that month were effective on the 15th of that month. 
-
+	
 	Since the assumption is that all policies for a given month are written on the 15th of that month, the written exposures for annual policies will be earned over a 13 month period. That is because there is always a half-month still to be earned after 12 months, coming from the fact that we started on the 15th.
-
+	
 	Other than that distinction, the same principles of aggregation covered previously apply.
-
-
-
-
-\chapter{Premiums}
+	
+	
+	
+	
+	\chapter{Premiums}
 	The process of ratemaking usually takes into account historical premium, but in order to do that several adjustment have to be applied. More specifically : 
 	\begin{itemize}
 		\item Bring historical premiums to the rate currently in effect;
@@ -489,74 +494,91 @@ The close ratio measures the competitiveness of the company's rates on the marke
 	
 	But first, just like exposures, let's review ways of aggregating premiums. As the procedure is really similar, we focus on the differences. 
 	
-\section{Premium Aggregation}
+	\section{Premium Aggregation}
 	\subsection{Written Premiums}
-		In principle, it's the same as exposure : all premium written in calendar or policy year counts in that specific year. The only difference is again when policies are canceled. When dealing with cancellation in calendar year, we subtract the proportion of written premium that was left to be paid in that calendar year. 
-		
-		For example, when writing a policy on July 1st 2017 for 900\$, we have 900\$ of written premium in the calendar year 2017. If the policy was to be canceled on April 1st 2018, we would subtract $ 900(1 - 2/3) = 300 $\$ from the written premiums of calendar year 2018. In policy year, we would subtract from policy year 2017.
-		
-		Of course, as with exposures we have 
-		\begin{align*}
-		\text{Written Premium} = \text{Earned Premium} + \text{Unearned Premium}.
-		\end{align*} 
-		
-	\subsection{Earned Premiums}
-		It works exactly as exposure. The only difference is that instead of calculating the portion of a policy's written exposure, we take the portion of its written premium earned in a specific calendar or policy year. 
-		
-	\subsection{In-Force Premiums }
-		In-force premiums of a company represents the total amount of full-time premium for all policies in effect at a given time. This metric should be interpreted with care when comparing two portfolios with written policies on different terms. For an insurer that writes half-year policies would have half of the in-force premiums as the same insurer writing one-year policies (even though after a year, they both could have the same earned exposure). 
-
-	\subsection{Calculation of Blocks of Policies}
-		Works the same as with exposures. If we have aggregated data by period, it is customary for an insurer to assume all of the policies were written on mid point of the period. With that, you can calculate written, earned and in-force premiums. 
-
-
-\section{Adjustment To Premium : Extension of Exposures}
-	This method involves rerating every policy from the historical data to restate historical premium to the amount that would be charged under the current rates. 
-
-	It is obviously the most accurate current rate level method, but it requires detailed data and good computing power. Also, actuaries must have all of the applicable rating characteristics for every policy in the historical period. 
-
-\section{Parallelogram Method}
+	In principle, it's the same as exposure : all premium written in calendar or policy year counts in that specific year. The only difference is again when policies are canceled. When dealing with cancellation in calendar year, we subtract the proportion of written premium that was left to be paid in that calendar year. 
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	For example, when writing a policy on July 1st 2017 for 900\$, we have 900\$ of written premium in the calendar year 2017. If the policy was to be canceled on April 1st 2018, we would subtract $ 900(1 - 2/3) = 300 $\$ from the written premiums of calendar year 2018. In policy year, we would subtract from policy year 2017.
+	
+	Of course, as with exposures we have 
+	\begin{align*}
+	\text{Written Premium} = \text{Earned Premium} + \text{Unearned Premium}.
+	\end{align*} 
+	
+	\subsection{Earned Premiums}
+	It works exactly as exposure. The only difference is that instead of calculating the portion of a policy's written exposure, we take the portion of its written premium earned in a specific calendar or policy year. 
+	
+	\subsection{In-Force Premiums }
+	In-force premiums of a company represents the total amount of full-time premium for all policies in effect at a given time. This metric should be interpreted with care when comparing two portfolios with written policies on different terms. For an insurer that writes half-year policies would have half of the in-force premiums as the same insurer writing one-year policies (even though after a year, they both could have the same earned exposure). 
+	
+	\subsection{Calculation of Blocks of Policies}
+	Works the same as with exposures. If we have aggregated data by period, it is customary for an insurer to assume all of the policies were written on mid point of the period. With that, you can calculate written, earned and in-force premiums. 
+	
+	
+	\section{Adjustment To Premium : Extension of Exposures}
+	This method involves rerating every policy from the historical data to restate historical premium to the amount that would be charged under the current rates. 
+	
+	It is obviously the most accurate current rate level method, but it requires detailed data and good computing power. Also, actuaries must have all of the applicable rating characteristics for every policy in the historical period. 
+	
+	\section{Parallelogram Method}
+	See Werner \& Modlin manual, page 74 to page 80. 
+	
+	\section{Premium Development}
+	Premiums might have to be developed in order to have an accurate ratemaking process. For example, is an actuary performs analysis on a policy year before all the policies written in that year have expired, than the actuary does not know which policies may still change or cancel during their remaining life. 
+	
+	Another example is when the the total exposure for a period can change. Let's say the insured pays premium based on an estimate or the total exposure. Once the policy is completed and the actual exposure is known, the final premium owed is calculated. This happens a lot is \textbf{workers compensation}. 
+	
+	\section{Exposure trend}
+	For business line that use inflation-sensitive exposures bases, it is common practice to project exposures (and thus premiums) to account for future inflation. 
+	
+	\section{Premium trend}
+	In addition to inflationary pressures, the average premium can change over time due to changes in the characteristics of the policies written (distributional changes). To account for future distributional changes, it is important to adjust the historical premium to the level expected during the future time period. 
+	
+	THIS IS NOT THE SAME AS ADJUSTING TO CURRENT RATE LEVEL. The premium also have to be adjusted to reflect any premium trend. 
+	
+	Typically, actuaries examine changes in the historical \emph{average} premium per exposure to determine the premium trend. 
+	
+	Trends can be determined using written or earned premiums ; written exposures tend to reflect shifts in the distribution faster than earned premium, but both are valid. The more granular the data used (for example quarterly instead of annual premium), the more responsive will be the statistic. 
+	
+	After determining the premium trend factor, there are two methods for adjusting historical data : \textbf{one-step} and \textbf{two-step} trending. 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 \end{document} 
