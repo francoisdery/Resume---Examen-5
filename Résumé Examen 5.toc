@@ -1,0 +1,37 @@
+\select@language {english}
+\contentsline {chapter}{Contents}{1}{section*.1}
+\contentsline {part}{\partnumberline {I}Ratemaking (\emph {Werner \& Modlin})}{3}{part.1}
+\contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}AJOUTES LES PRINCIPES DE LA CAS DANS LE STATEMENT !!!!}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}Exposure \& Premium}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Claims \& Losses}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Underwriting Expenses}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}Prospective Ratemaking \& Experience Adjustments}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}Basic Insurance Ratios}{7}{section.1.6}
+\contentsline {chapter}{\chapternumberline {2}Rating Manuals}{11}{chapter.2}
+\contentsline {chapter}{\chapternumberline {3}Ratemaking Data}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Data Aggregation}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Calendar year}{13}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Accident year}{14}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Reported year}{14}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Policy year}{14}{subsection.3.1.4}
+\contentsline {chapter}{\chapternumberline {4}Exposures}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}Criteria For Exposure Bases}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Proportional to Expected Loss}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Practical}{17}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Historical Precedence}{18}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Common Exposure Bases by Line of Business}{18}{subsection.4.1.4}
+\contentsline {section}{\numberline {4.2}Aggregation of Exposures (One-year Policies)}{18}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Written Exposures}{18}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Earned Exposures}{19}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}In-Force Exposure}{19}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Aggregating With Other Policy Terms}{19}{section.4.3}
+\contentsline {section}{\numberline {4.4}Calculation of Blocks of Experience}{19}{section.4.4}
+\contentsline {chapter}{\chapternumberline {5}Premiums}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Premium Aggregation}{21}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Written Premiums}{21}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Earned Premiums}{22}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}In-Force Premiums }{22}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}Calculation of Blocks of Policies}{22}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Adjustment To Premium : Extension of Exposures}{22}{section.5.2}
+\contentsline {section}{\numberline {5.3}Parallelogram Method}{22}{section.5.3}
