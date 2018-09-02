@@ -45,14 +45,14 @@
 \newenvironment{proof}[1][Démonstration]{\noindent\ }{\ \rule{0.5em}{0.5em}}
 \newenvironment{exemple}
 {
-	\begin{example} \normalfont \ \\ \indent
+	\begin{example} \normalfont \ \\ 
 	}
 	{
 		\hfill\rule{0.5em}{0.5em}\end{example}
 }
 
 \newenvironment{solution}
-{\noindent\textbf{Solution:} \\ \indent
+{\noindent\textbf{Solution:} \\ 
 }{
 }
 
@@ -520,7 +520,152 @@
 	It is obviously the most accurate current rate level method, but it requires detailed data and good computing power. Also, actuaries must have all of the applicable rating characteristics for every policy in the historical period. 
 	
 	\section{Parallelogram Method}
-	See Werner \& Modlin manual, page 74 to page 80. 
+	See Werner \& Modlin manual, page 74 to page 80 for full details. 
+	
+	This method assumes that premium is written evenly throughout the time period. It adjusts\emph{ the aggregated historical premium} by an average factor to bring the premiums on-level with the current rates. 
+	
+	As premiums are aggregated, we calculate the on-level premiums by aggregate group (calendar year, policy year, etc.). The method differs in the calculations depending on the method of aggregation, but the logic is the same. 
+	
+	Here are the general steps of the parallelogram method :
+	\begin{tcolorbox}
+		\begin{enumerate}
+			\item For each rate change, calculate the cumulative index (taking in consideration all of the previous rate changes). For example :  
+			
+			\begin{tabular}{cccc}
+				\toprule
+				Rate Level Group & Effective Date & Rate Change & Cumulative Index \\
+				\midrule
+				1 & Initial & 0\% & 1 \\
+				2 & 07/01/2010 & 5\% & 1.05\\
+				3 & 01/01/2011 & 10\% & 1.155\\
+				4 & 04/01/2012 & -1\% & 1.143\\
+				\bottomrule
+			\end{tabular}  \\
+		
+			\item  Calculate the proportion of the aggregated exposure of the period that correspond to each rate level group. This can usually be done geometrically. 
+			\item With each of the proportion, calculate the weighted average cumulative index for the period, like this (if you don't know how to do a weighted average) :
+			 \begin{align*}
+			 \text{Average Cumulative Index} = \sum_{i = 1}^{n} (\text{Proportion}_{i})(\text{Cumulative index}_{i})
+			 \end{align*}
+			\item The on-level factor is 
+			\begin{align*}
+			\text{On-Level Factor} = \frac{\text{Current Cumulative Rate Level Index}}{\text{Average Rate Level Index}}.
+			\end{align*}
+			\item the On-Level Premium for the aggregated period is 
+			\begin{align*}
+			\text{On-Level Premium} = \text{Aggregated Premiums} * \text{On-Level Factor}.
+			\end{align*}
+		\end{enumerate}
+	\end{tcolorbox}
+	
+	
+	\begin{exemple}
+		CAS Exam 5, Fall 2013 Question \#2 :\\
+		All policies have 6-months terms, and are written evenly throughout the year. The rating algorithm is $ (\text{Base rate}*\text{Class Factor} + \text{Fees}) $, ans the current rates are :
+		
+		\begin{tabular}{lc}
+			Base Rate & 500\$ \\
+			Class A Factor & 1.00 \\
+			Class B Factor & 0.80 \\
+			Fees & 55\$
+		\end{tabular}\\
+	
+		Here is the distribution of exposures for different underwriting period : 
+		
+		\begin{tabular}{cccc}
+			\toprule
+			Period & Effective Date & Class A written exposures & Class B written exposures \\
+			\midrule
+			1 & 01/01/2011 - 06/30/2011 & 125 & 50 \\
+			2 & 07/01/2011 - 12/31/2011 & 150 & 100 \\
+			3 & 01/01/2012 - 06/30/2012 & 175 & 150 \\
+			4 & 07/01/2012 - 12/31/2012 & 200 & 200 \\
+			\bottomrule
+		\end{tabular}\\
+		
+		Using the Extension of Exposures method, calculate the on-level earned premium for calendar year 2012.
+		 
+		\begin{solution}
+			As we have exposures from 6-months period, we will choose the average written date as evaluation point and assume that the exposures are evenly written. From the evaluation point, we calculate the portion of the period that is earned in calendar year 2012. So we have : 
+			
+			\begin{tabular}{ccccc}
+				\toprule
+				Period & Mid Point & \% Earned in 2012 & Class A exposures & Class B exposures \\
+				\midrule
+				1 & 04/01/2011 & 0\% & 125 & 50 \\
+				2 & 10/01/2011 & 50\% & 150 & 100 \\
+				3 & 04/01/2012 & 100\% & 175 & 150 \\
+				4 & 10/01/2012 & 50\% & 200 & 200 \\
+				\bottomrule
+			\end{tabular}\\
+		
+		Now that we know \% of exposure earned in 2012 for each period, we can calculate the aggregate earned exposure for calendar year 2012 and each class.
+		\begin{align*}
+		\text{Class A}: \ & 0(125) + 0.5(150) + 1(175) + 0.5(200) = 350 \text{ Earned Exposures} \\
+		\text{Class B}: \ & 0(50) + 0.5(100) + 1(150) + 0.5(200) = 300 \text{ Earned Exposures}
+		\end{align*}
+		 
+		 With the earned exposures per class, we can now calculate the on-level earned premium : 
+		\begin{align*}
+		\text{Class A}: \ & (500*1.00 + 55)(350) = 194250\$ \\
+		\text{Class B}: \ & (500*0.80 + 55)(300) = 136500\$
+		\end{align*}
+		
+		Meaning that, for calendar year 2012, there are $ 194250 + 136500 = \fbox{330750} $ earned premium.
+		\end{solution}
+	\end{exemple}
+	
+	\begin{exemple}
+		CAS Exam 5, Fall 2015 Question \#1 : \\
+		For a book of 6-months policies that uses vehicle-year as its exposure base, the premium per vehicle is 500\$ per 6-months, for all policies effective before August 31st 2014. We have the following data: 
+		
+		\begin{tabular}{cc}
+			\toprule
+			Effective date & \# of vehicle written on this date\\
+			\midrule
+			02/01/2013 & 1100\\
+			08/01/2013 & 800 \\
+			02/01/2014 & 600 \\
+			08/01/2014 & 300
+		\end{tabular}
+	
+	Knowing a rate change is effective on September 1st 2014, calculate : 
+	\begin{enumerate}
+		\item the written and earned exposures for calendar year 2014
+		\item the on-level earned premiums for calendar year 2014, using extension of exposures and parallelogram method. 
+	\end{enumerate}
+
+	\begin{solution}
+		\textbf{\#1 -  Written and Earned Exposures for Calendar Year 2014:}
+		
+		\begin{tabular}{ll}
+			Written exposures : & $ 0.5(600) + 0.5(300) = 450 $\\
+			Earned exposures : & $ \frac{1}{6}(0.5)(800) + 0.5(600) + \frac{5}{6}(0.5)(300) = 491.66 $
+		\end{tabular}
+	
+		\small *Note that we are multiplying by 0.5 because the exposure base is vehicle-year, while we are working with 6-months policies .\normalsize
+		
+		\textbf{\#2 - Extension of exposures method: }\\[0pt]
+			There is a subtle detail in the question that is quite important. We are given that the premium per vehicle on a \textbf{6-months term} is 500\$, but the exposure base is the vehicle-\textbf{year}. Hence, the premium for a full-year vehicle is $ 500(2) = 1000\$ $. As we calculated the earned exposure on a vehicle-year basis in \#1, we need to have a year-base premium to calculate the earned premium. 
+			
+			With that said, to calculate the on-level premium, we re-rate all the policies in the book. That means rating all 491.66 earned premium according to the -18\% rate change that occured on September 1st. Hence, we have : 
+			\begin{align*}
+			\text{On-Level Premiums} &= 1000(1-0.18)*491.66\\
+			&=\fbox{403 169 \$}
+			\end{align*} 
+			
+		\textbf{\#2 - Parallelogram method : } \\[0pt]
+			When using this method, we have to assume that the policies were written evenly throughout time, even though in this case we know it to be false. 
+			
+			As policies have a 6-months term and the rate change is effective on September 1st, we have 1/9 of the policies written in calendar year 2014 that are on the new rates. The calculations goes as follow : 
+			
+			\begin{align*}
+			\text{Average cumulative index} &= 1/9(1-0.18) + 8/9 = 0.98\\
+			\text{On-Level factor} &= \frac{0.82}{1/9(1-0.18) + 8/9} = \frac{0.82}{0.98} = 0.836739\\
+			\text{On-Level Premium} &= 0.836739(491.66)(1000\$) = \fbox{411 394 \$}
+			\end{align*}
+	\end{solution}
+	\end{exemple}
 	
 	\section{Premium Development}
 	Premiums might have to be developed in order to have an accurate ratemaking process. For example, is an actuary performs analysis on a policy year before all the policies written in that year have expired, than the actuary does not know which policies may still change or cancel during their remaining life. 
