@@ -674,8 +674,8 @@
 	\section{Exposure trend}
 	For business line that use inflation-sensitive exposures bases, it is common practice to project exposures (and thus premiums) to account for future inflation. 
 	
-	\section{Premium trend}
-	In addition to inflationary pressures, the average premium can change over time due to changes in the characteristics of the policies written (distributional changes). To account for future distributional changes, it is important to adjust the historical premium to the level expected during the future time period. 
+	\section{Premium trend (One/Two-Step Trending)}
+	In addition to inflationary pressures, the average premium can change over time due to changes in the characteristics of the policies written (distributional changes). To account for future distributional changes, we also have to adjust the historical on-level premium to the level expected during the future time period. \textbf{Note that one should always start with the on-level premiums before adding any trend, as we don't want to include rate changes in the trend factor}.
 	
 	THIS IS NOT THE SAME AS ADJUSTING TO CURRENT RATE LEVEL. The premium also have to be adjusted to reflect any premium trend. 
 	
@@ -685,19 +685,76 @@
 	
 	After determining the premium trend factor, there are two methods for adjusting historical data : \textbf{one-step} and \textbf{two-step} trending. 
 	
+	\subsection{One-Step Trending}
+	If we think that the historical trend we stay the same in the future rate effective period, then we would use one-step trending. 
+	
+	We have to determine the length of time to trend the earned premiums of the historical period. The trend period is always defined the same : 
+	
+	\begin{tcolorbox}
+		\begin{tabular}{ll}
+			\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
+				Average WRITTEN date of the policies that have earned premiums in the historical period.
+			\end{minipage}\\[15pt]
+			\textbf{To} : & \begin{minipage}{0.8\linewidth}
+				Average WRITTEN date of the policies that will be in effect during the rate effective period.
+			\end{minipage}\\ 
+		\end{tabular}\\
+	
+		Depending on if the historical period is aggregated by calendar or policy year, the "from" date will change. \textbf{Always refer to the definition}. The "to" date will stay the same, as the rate effective period is always in policy year. 
+	\end{tcolorbox}
+	
+	The length of the period is obviously the difference between the "to" date and the "from" date. To calculate the trended on-level historical premiums, the calculation is : 
+	\begin{tcolorbox} [ams align*]
+	\textbf{Trended On-Level Premium} = (\text{On-Level Premium})(\text{Trend Factor})^{\text{(length of trending period)}}
+	\end{tcolorbox}
 	
 	
+	\subsection{Two-Step Trending}
+	We would use two-step trending when we expect the premium trend to change over time, meaning that the historical trend won't necessarily apply to the future rate effective period.
 	
+	In two-step trending, there are two steps (thanks captain obvious): 
+	\begin{enumerate}
+		\item Adjust historical on-level premium to the average premium level of \textbf{the most recent point in the trend data}
+		\item Apply a separate trend factor to project the premium calculate in step \#1 to the future rate effective period.
+	\end{enumerate} 
 	
+	\begin{tcolorbox}[adjusted title = \textbf{Step \#1}]
+		In step \#1, we have two options. First, the current trend factor can be calculate as 
+		\begin{align*}
+		\textbf{Current Premium Trend Factor} = \frac{\text{Latest Average WRITTEN on-level premium}}{\text{Historical average EARNED on-level premium}}.
+		\end{align*}\\
+		
+		When the historical average premium is volatile, the actuary can also choose to evaluate a trend based on several points rather than to use the previous ratio. If this method is used, then the trending factor is determined just like one-step trending, but with the following dates for the period : \\
+				
+		\begin{tabular}{ll}
+		 	\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
+							 		Average WRITTEN date of the policies that have earned premiums in the historical period.
+							 	\end{minipage}\\[10pt]
+		 	\textbf{To} : & \begin{minipage}{0.8\linewidth}
+						 		Average WRITTEN date of the \textbf{latest period} of the trend data.
+						 	\end{minipage}\\ 
+		 \end{tabular}\\
+	\end{tcolorbox}
 	
+	\begin{tcolorbox}[adjusted title = \textbf{Step \#2}]
+		In step \#2, we want to select the amount of average premium that is expected to change annually from the current level to the future rate effective period. We also have to calculate a trend period for which to apply this \textbf{future trend factor}, that is defined as : \\
+		
+		\begin{tabular}{ll}
+		 	\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
+							 		Average WRITTEN date of the \textbf{latest period} of the trend data.
+							 	\end{minipage}\\[10pt]
+		 	\textbf{To} : & \begin{minipage}{0.8\linewidth}
+						 		Average WRITTEN date of the policies that will be in effect during the rate effective period.
+						 	\end{minipage}\\ 
+		\end{tabular}\\[10pt]
 	
-	
-	
-	
-	
-	
-	
-	
+		Finally, the final trended on-level premium is calculated like this :
+		\begin{align*}
+		\textbf{Trended On-Level Premium} = \  &\text{On-Level Premium}\\
+		&*\text{Current Trend Factor}\\
+		&*(\text{Future Trend Factor})^{\text{(length of trending period)}}
+		\end{align*}
+	\end{tcolorbox}
 	
 	
 	
