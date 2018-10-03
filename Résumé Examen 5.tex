@@ -764,6 +764,239 @@
 	
 	
 	
+\chapter{Losses and ALAE}
+
+
+
+
+
+	
+	
+\chapter{UW Expenses Ratios}	
+
+In order to calculate an indicated rate or rate change, we need to take into account underwriting expenses, more specifically how much of the premiums is used up to account for those expenses. Since there is variable and fixed underwriting expenses, we will need a ratio for both types.
+
+\section{Variable Expense Ratio}
+
+	This ratio evaluates the ratio of variable expenses to premiums. Just like in the definition of the underwriting expense ratio (in chapter 1), the type of premium used depends on the type of expense. We remember that except for general expenses which uses earned premiums for the ratio, all other type of expenses uses written premiums. 
+		
+	If we assume that all of commissions and taxes are variable, we would calculate the variable expense ratio as :
+	\begin{equation*}
+		\textbf{Variable Ratio} = \frac{\textbf{Commis} + \textbf{Taxes} + (\textbf{Variable \% )(Other)}}{\textbf{Written Premium}} +\frac{\textbf{(Variable \%)(General)}}{\textbf{Earned Premium}} 
+	\end{equation*}
+	
+	IMPORTANT : when calculating the variable expense ratio, it's important that periods for expenses and premiums match, meaning that \textbf{if we use historical expenses (\$), then we use historical premiums (\$) as well.}
+	
+	
+\section{Fixed Expenses Ratio}
+	When having to find a fixed expense ratio, there is two methods possible, which we generally use depending on if the fixed expenses are trending at the same rate as the premiums or not. If they are (fixed expense trend = premium trend), then we would use the \textbf{Premium-based method}, if not (fixed expense trend $ \neq $ premium trend) we would use the \textbf{Exposure-based method.}
+	
+	\subsection{Premium-based method}
+		As stated, this method generally assumes that the fixed expenses trend at the same rate as the premiums. This means that we can use historical premiums to calculate the fixed expense ratio, without going through the trouble of calculating on-level premiums. Hence, assuming that only general and other expenses are fixed, the definition of the fixed expense ratio is :
+		\begin{equation*}
+		\textbf{Fixed Expenses Ratio} = \frac{(\textbf{Fixed \% )(Other)}}{\textbf{Histo. Written Premium}} +\frac{\textbf{(Fixed \%)(General)}}{\textbf{Histo. Earned Premium}} 
+		\end{equation*}
+	
+	
+	\subsection{Exposure-based method}
+		If expenses are trending at a different rate than premiums, this is the method to use. We calculate the expenses per exposure, that we trend to the futur rate effective period.
+		
+		The definition of the \emph{trending period} can be a little complex, since we usually make the assumption that general expenses are incurred at the average \emph{earned} premium date, while other expenses are incurred at the average \emph{written} premium date. Usually, the historical period will be in calendar year, making it so that the average written date and the average earned date is the same (the middle of the calendar year). But for the new rate effective period, which is a policy year, the written average date isn't equal to the average earned date : the average earned date is always 1/2 a policy term after written average date. This makes is so that \textbf{the trending period for general expenses is always a 1/2 policy term longer than the trending period for the other expenses.} 
+		
+		
+		When we have the \textbf{total trended fixed expense per exposure}, which is the sum of all trended expenses per exposure, we can find the fixed expense ratio by dividing by the \textbf{average on-level and trended earned premiums}. This is the main difference from the Premium-based method, where we generally can use the historical premiums instead of on-level.
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\part{Reserving (\emph{Freidland})}
+	
+	
+	
+\chapter{Berquist-Sherman Techniques}
+
+Theses techniques are used when an insurer has to deal with operational changes. Berquist and Sherman propose to ways : 
+\begin{itemize}
+	\item Use data \emph{selection} to isolate or neutralize the impact of the changes;
+	\item Adjust the data to restate historical data as if the changes never occurred; 
+\end{itemize}
+	
+The first option has more to do with making wise choices considering the situation, but doesn't require a specific methodology. The second option however does, and this is what is known as the Berquist-Sherman techniques. Theses techniques can be used to adjust triangles for changes in \textbf{claim settlement rates} and/or \textbf{case reserve adequacy}.
+
+\section{Claim Settlement Rates Changes}
+	 
+	The assumptions of this method is that changes in the disposal rates are only due to changes in settlement rates, not due to things like changes in prioritization between small and large claims or in the rate of reporting. 
+	
+	Here are the steps of this technique : 
+	\begin{enumerate}
+		\item \textbf{Calculate the disposal rate triangle}. \\
+		As we remember, disposal rates for accident year \emph{i} and age \emph{j} ($ D_{i,j} $)are defined as : 
+		\begin{align*}
+		D_{i,j} = \frac{\text{\# of Closed Claim Count}_{j}}{\text{\# of Ultimate Claim Count}_{i}}.
+		\end{align*}
+		
+		
+		
+		
+		
+		\item \textbf{From the disposal rate triangle, select disposal rates along one of the diagonals}.\\
+		Usually, we choose the latest disposal rate (the latest diagonal of the triangle). We will denote the selected disposal rate as $ \hat{D}_{j}$, where $ j $ can be all of the maturities of the triangle. 
+		
+		
+		
+		
+		
+		
+		\item \textbf{Create the adjusted paid claims triangle.} 
+		
+		To do this, we need to determine a relationship between disposal rated of paid claim amount. This is usually done by regression. On the exam, we should expect linear or exponential regression to be used. If the relationship is linear, linear interpolation can be used. 
+		
+		For example, let's say we have the two following triangles : \\
+	
+		\begin{tabularx}{0.75\textwidth}{ccccclcccc}
+			\toprule
+			\textbf{Accident} & \multicolumn{4}{c}{\textbf{Disposal Rates}} & & \multicolumn{4}{c}{\textbf{Cum. Paid Claims}}\\
+			\textbf{Years} & 12 & 24 & 36 & 48 & & 12 & 24 & 36 & 48  \\
+			\midrule
+			2010 & 0.400 & 0.730 & 0.850 & \textbf{0.920} & &  200 & 350 & 450 & 520  \\
+			2011 & 0.400 & 0.667 & \textbf{0.833} & & & 250 & 400 & 550 & \\
+			2012 & 0.357 & \textbf{0.679} & & & & 240 & 420 & & \\
+			2013 & \textbf{0.367} & & &  & & 310 & & & \\
+			\bottomrule
+		\end{tabularx}\\
+		
+		The amount of paid claims we interpolate between depend on whether the historical disposal rate $ D_{i,j} $ is higher or lower than the \emph{selected} disposal rate $ \hat{D}_{j} $. Let's assume that we can use linear interpolation. We will show how to use exponential regression between two points later. 
+		\begin{itemize}
+			\item \textbf{If} $ \mathbf{D_{i,j} < \hat{D}_{j}} $, just like for AY2012 at maturity 12 where $ 0.357 < 0.367 $, then we will want to increase the cumulative paid claims at AY2012 maturity 12. The logic is that we want to bring $ D_{2012,12} $ closer to the level of $ \hat{D}_{12} $. In order to increase the level of $ D_{i,j} $, we will interpolate the cumulative paid claims $ PC_{i,j} $ with the paid claims from the next maturity. \\
+			
+			In our example, that means interpolate $ PC_{2012, 12} $ with $ PC_{2012, 24} $. So we'd have 
+			\begin{align*}
+			\text{Adjusted }C_{(2012, 12)} &= \left(\frac{\hat{D}_{12} - D_{2012, 12}}{D_{2012, 24} - D_{2012, 12}}\right)PC_{2012, 24} + \left(\frac{D_{2012, 24} - \hat{D}_{12}}{D_{2012, 24} - D_{2012, 12}}\right)PC_{2012, 12}\\
+			&= PC_{2012, 12} + \left(PC_{2012, 24} - PC_{2012, 12} \right)\left( \frac{\hat{D}_{12} - D_{2012, 12}}{D_{2012, 24} - D_{2012, 12}}\right)\\
+			&= 240 + (420 - 240)\left(\frac{0.367 - 0.357}{0.679 - 0.357}\right)\\
+			&= 245
+			\end{align*}
+		
+			\item \textbf{Else if} $ \mathbf{D_{i,j} > \hat{D}_{j}} $, just like for AY2010 maturity 12 where $ 0.400>0.367 $, then the interpolation has to decrease the amount of paid claims. Hence, we interpolate between the $ PC_{i,j} $ and the paid claims of the \emph{previous} maturity. \\
+			
+			In our example with AY2010 and maturity 12, that means interpolate between $ PC_{2010, 0} = 0 $ and $ PC_{2010, 12} = 200 $. The adjusted paid claims would then be 
+			\begin{align*}
+			\text{Adjusted }C_{(2010, 12)} &= \left(\frac{\hat{D}_{12} - 0}{D_{2010, 12} - D_{2010, 0}}\right)PC_{2010, 12} + \left(\frac{D_{2010, 12} - \hat{D}_{12}}{D_{2010, 10} - 0}\right)PC_{2010, 0}\\
+			&= PC_{2010, 0} + \left(PC_{2010, 12} - PC_{2010, 0} \right)\left( \frac{\hat{D}_{12} - D_{2012, 0}}{D_{2012, 12} - D_{2012, 0}}\right)\\
+			&= 0 + (200 - 0)\left(\frac{0.367 - 0}{0.400 - 0}\right)\\
+			&= 183
+			\end{align*}
+		\end{itemize}
+	
+	
+	Instead of a linear interpolation,  we could have had to use exponential regression between two points to find the adjusted paid claims. Here's how to proceed in that situation. We start with the general equation \fbox{$ \hat{Y}_{i,j} = a_{i,j}e^{b_{i,j}X_{i,j}}, $} where $ X $ is the closed claim count at $ (i,j) $, $ Y $ is the adjusted paid claims at $ (i,j) $ and \emph{a} and \emph{b} are the regression parameters. \\
+	
+	The same rules apply regarding if we interpolate between the paid claim at previous or next maturity (if $ D_{i,j} < \text{or} > \hat{D}_{j} $), but these now apply as to the values used to calculate the \emph{b} parameter. Assuming that we interpolate to the next maturity, the \emph{b} parameter would be : 
+	\begin{align*}
+	b_{i,j} = \frac{\ln(PC_{i, j+12}) - \ln(PC_{i, j})}{nC_{i, j + 12} - nC_{i,j}}
+	\end{align*}
+	where $ nC_{i,j} $ is the number of closed claims at $ (i,j) $. 
+	
+	After finding each $ b_{i,j} $ parameter, we would find the $ a_{i,j} $ parameters using the culumative paid claims and the number of closed claims at $ (i,j) $. If $ Y_{i,j} $ is the cumulative paid claims at $ (i,j) $, then we have 
+	\begin{align*}
+	a_{i,j} = \frac{Y_{i,j}}{e^{b_{i,j}X_{i,j}}}
+	\end{align*}
+ 	With both parameters, we can then calculate the adjusted paid claims, with \fbox{$ \hat{Y}_{i,j} = a_{i,j}e^{b_{i,j}X_{i,j}} $}.\\
+	
+	
+	\item \textbf{When the adjusted paid claims triangle is complete, the last step is to calculate the ultimate claims using the development technique.} 
+
+
+	\end{enumerate}
+	
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
