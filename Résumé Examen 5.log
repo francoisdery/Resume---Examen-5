@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  3 OCT 2018 14:43
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2018.8.7)  19 SEP 2018 11:36
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  2 SEP 2018 21:40
->>>>>>> 9876041b0d5721fe36f7307c7ffc80d6c32ddeac
->>>>>>> 8452cd0539e3d83e57f7dfacae182c010c8a0db5
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.12.27)  3 OCT 2018 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1413,7 +1405,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 742--750
 Underfull \vbox (badness 3713) has occurred while \output is active []
 
  [27]
-<<<<<<< HEAD
 [28] [29
 
 ] [30
@@ -1542,59 +1533,10 @@ rm1200.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb
 ><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb><c:/texli
 ve/2017/texmf-dist/fonts/type1/public/cm-super/sfxc1440.pfb><c:/texlive/2017/te
 xmf-dist/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on "Résumé Examen 5.pdf" (38 pages, 451821 bytes).
+Output written on "Résumé Examen 5.pdf" (38 pages, 451829 bytes).
 PDF statistics:
  523 PDF objects out of 1000 (max. 8388607)
  452 compressed objects within 5 object streams
  126 named destinations out of 1000 (max. 500000)
  269 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
-[28]
-\tf@toc=\write8
-\openout8 = `"Résumé Examen 5.toc"'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 782.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 782.
- (./Résumé Examen 5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 782.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 782.
-Package rerunfilecheck Info: File `"Résumé Examen 5".out' has not changed.
-(rerunfilecheck)             Checksum: CEF29CF572506ABF6E1C688B23E7567E;1656.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 782.
- ) 
-Here is how much of TeX's memory you used:
- 20770 strings out of 492985
- 362116 string characters out of 6136283
- 474134 words of memory out of 5000000
- 23902 multiletter control sequences out of 15000+600000
- 28743 words of font info for 64 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 59i,13n,75p,973b,618s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2017/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2017/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbi1200.p
-fb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb><c:/tex
-live/2017/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><c:/texlive/2017/
-texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2017/texmf-dist
-/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2017/texmf-dist/fonts/typ
-e1/public/cm-super/sfbx2074.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/
-cm-super/sfbx2488.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/s
-frm0800.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pf
-b><c:/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texl
-ive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2017/t
-exmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb><c:/texlive/2017/texmf-dist/
-fonts/type1/public/cm-super/sfti1095.pfb><c:/texlive/2017/texmf-dist/fonts/type
-1/public/cm-super/sfxc1440.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/c
-m-super/sfxc2488.pfb>
-Output written on "Résumé Examen 5.pdf" (28 pages, 382882 bytes).
-PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 348 compressed objects within 4 object streams
- 98 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 8452cd0539e3d83e57f7dfacae182c010c8a0db5
 
