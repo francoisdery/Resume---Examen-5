@@ -936,16 +936,47 @@ The first option has more to do with making wise choices considering the situati
 	
 	
 	\item \textbf{When the adjusted paid claims triangle is complete, the last step is to calculate the ultimate claims using the development technique.} 
-
+	
 
 	\end{enumerate}
 	
  
 	
+
 	
 	
+	\section{Case Adequacy Adjustement}
 	
-	
+	The last section adjusted \emph{paid} claims. In order to makes adjustment to \emph{reported} claims triangle, we need to determine whether there have been changes in case adequacy, and if so, how to adjust for these changes. 
+
+	Here are the steps of this technique :
+	\begin{enumerate}
+		\item \textbf{Calculate the severity trend observed in the average paid claim.}\\
+		On the exam, we most likely habe the severity trend given from the question. Otherwise, we calculate this trend with the average paid claim triangle, and use regression or \% of change to evaluate the change.\\
+		
+		\item \textbf{Calculate the average case reserve triangle.}\\
+		This is calculated by dividing \emph{reported claims} by the \emph{open claim counts}.\\
+		
+		\item \textbf{Calculate the adjusted average case reserves.} 
+		Using the severity trend calculated in the first step, we calculate the adjusted average case reserve by de-trending the latest case outstanding of each accident year by the severity trend. If we write the case reserve for accident year \emph{i} and maturity \emph{j} as $ aCR_{i,j} $ and the latest average case reserve as $ \hat{aCR_{i,j}} $, then we calculate the adjusted average case reserve as : 
+		\begin{align*}
+		\text{Adjusted } aCR_{i,j} = \frac{\hat{aCR}_{i,j}}{(\text{Severity Trend})^{\text{Latest Period} - i}}
+		\end{align*}
+		
+		For example, let's say we have a severity trend of 10\% and the following average case reserve triangle, we would have the following adjusted average case reserve:\\
+		
+		\begin{tabularx}{0.9\textwidth}{cccclccc}
+			\toprule
+			\textbf{Accident} & \multicolumn{3}{c}{\textbf{Avg Case Reserve}} & & \multicolumn{3}{c}{\textbf{Adj Avg Case Reserve}}\\
+			\textbf{Years} & 12 & 24 & 36 & & 12 & 24 & 36  \\
+			\midrule
+			2011 & 1000 & 3000 & \textbf{5000} & & $ 1136 = \frac{1375}{1.10^{2}} $ & 400 & 550 \\
+			2012 & 1100 & \textbf{3300} & & & 240 & 420 & \\
+			2013 & \textbf{1375} & &  & & 310 & & \\
+			\bottomrule
+		\end{tabularx}\\
+		
+	\end{enumerate}
 	
 	
 	
