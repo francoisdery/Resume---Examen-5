@@ -40,3 +40,13 @@
 \contentsline {section}{\numberline {5.6}Premium trend (One/Two-Step Trending)}{26}{section.5.6}
 \contentsline {subsection}{\numberline {5.6.1}One-Step Trending}{26}{subsection.5.6.1}
 \contentsline {subsection}{\numberline {5.6.2}Two-Step Trending}{27}{subsection.5.6.2}
+\contentsline {chapter}{\chapternumberline {6}Losses and ALAE}{29}{chapter.6}
+\contentsline {chapter}{\chapternumberline {7}UW Expenses Ratios}{31}{chapter.7}
+\contentsline {section}{\numberline {7.1}Variable Expense Ratio}{31}{section.7.1}
+\contentsline {section}{\numberline {7.2}Fixed Expenses Ratio}{31}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Premium-based method}{31}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Exposure-based method}{32}{subsection.7.2.2}
+\contentsline {part}{\partnumberline {II}Reserving (\emph {Freidland})}{33}{part.2}
+\contentsline {chapter}{\chapternumberline {8}Berquist-Sherman Techniques}{35}{chapter.8}
+\contentsline {section}{\numberline {8.1}Claim Settlement Rates Changes}{35}{section.8.1}
+\contentsline {section}{\numberline {8.2}Case Adequacy Adjustement}{37}{section.8.2}
