@@ -1,4 +1,4 @@
-\select@language {english}
+\babel@toc {english}{}
 \contentsline {chapter}{Contents}{1}{section*.1}
 \contentsline {part}{\partnumberline {I}Ratemaking (\emph {Werner \& Modlin})}{3}{part.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}
@@ -53,3 +53,6 @@
 \contentsline {chapter}{\chapternumberline {9}Berquist-Sherman Techniques}{37}{chapter.9}
 \contentsline {section}{\numberline {9.1}Claim Settlement Rates Changes}{37}{section.9.1}
 \contentsline {section}{\numberline {9.2}Case Adequacy Adjustment}{39}{section.9.2}
+\contentsline {chapter}{\chapternumberline {10}ULAE Estimation}{43}{chapter.10}
+\contentsline {section}{\numberline {10.1}Dollar-Based Techniques}{43}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}Paid-to-Paid (Classical Technique)}{43}{subsection.10.1.1}
