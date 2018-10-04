@@ -1114,36 +1114,53 @@ The first option has more to do with making wise choices considering the situati
 \begin{tcolorbox}
 \textbf{For this section, we have to know the following notation : }
 	\begin{description} 
-		\item[M:] Paid ULAE
-		\item[W:] Ratio of ULAE to claims
-		\item[B:] Claim basis for the calendar year
-		\item[R:] Ultimate cost of claims reported (ie. opened) during the calendar year
-		\item[P:] Paid claims during the calendar year
-		\item[C:] Ultimate cost of claims closed during the calendar year.
-		\item[$ \mathbf{U_{1}} $:] Percent of ultimate ULAE spent on opening (reporting) claims 
-		\item[$ \mathbf{U_{2}} $:] Percent of ultimate ULAE spent on maintaining (paying) claims 
-		\item[$ \mathbf{U_{3}} $:] Percent of ultimate ULAE spent on closing claims \\
+		\item[$ \mathbf{M_{i}} $:] Paid ULAE for calendar year $ i $ ;
+		\item[$ \mathbf{W_{i}} $:] Ratio of ULAE to claims for calendar year $ i $ ;
+		\item[$ \mathbf{W^{*}} $:] Selected ratio of ULAE to claims ;
+		\item[$ \mathbf{B_{i}} $:] Claim basis for calendar year $ i $ ;
+		\item[$ \mathbf{L_{i}} $:] Ultimate claims for calendar year $ i $ ;
+		\item[$ \mathbf{R_{i}} $:] Ultimate cost of claims reported (ie. opened) during calendar year $ i $ ;
+		\item[$ \mathbf{P_{i}} $:] Paid claims during calendar year $ i $ ;
+		\item[$ \mathbf{C_{i}} $:] Ultimate cost of claims closed during calendar year $ i $ ;
+		\item[$ \mathbf{U_{1}} $:] Percent of ultimate ULAE spent on opening (reporting) claims ;
+		\item[$ \mathbf{U_{2}} $:] Percent of ultimate ULAE spent on maintaining (paying) claims  ;
+		\item[$ \mathbf{U_{3}} $:] Percent of ultimate ULAE spent on closing claims ; \\
 	\end{description}
 
 The relationship of the paid ULAE to claim costs is then defined as : 
 \begin{align*}
-\mathbf{M= WB = W\left(U_{1}R + U_{2}P + U_{3}C\right)}
+\mathbf{M_{i}= W_{i}B_{i} = W_{i}\left(U_{1}R_{i} + U_{2}P_{i} + U_{3}C_{i}\right)}.
 \end{align*}
+As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $ \mathbf{W_{i} = M_{i}/B_{i}} $.
 \end{tcolorbox}
+
+
 
 
 	\subsection{Paid-to-Paid (Classical Technique)}
 	
-	In this technique, the unpaid ULAE are estimated using the ratio of \emph{paid ULAE} to \emph{paid claims}. The assumptions of this method is that the ratio is generally stable through time and that the cost of future claims management activity will be proportional to the IBNR and case outstanding. 
+	The assumptions of this method is that the ratio is generally stable through time and that the cost of future claims management activity will be proportional to the IBNR and case outstanding. Hence, in this technique, selected ratio of ULAE to claims ($ \mathbf{W^{*}} $) is estimated using the ratios ($ \mathbf{W_{i}} $) of \emph{paid ULAE} to \emph{paid claims}:
+	\begin{align*}
+	W_{i} = \frac{B_{i}}{M_{i}} = \frac{P_{i}}{M_{i}}
+	\end{align*}
+	With all of the ratios $ W_{i} $, we select $ \mathbf{W^{*}} $. 
 	
-	The technique assumes that half of the ULAE are sustained when a claim is opened, while the other half is sustained when it is closed. Hence, \emph{we apply 50\% of the ratio to case outstanding} (since the first half of the expenses is already incurred) and \emph{100\% of the ratio to the IBNR} (since it's not yet reported, no expenses has been incurred). Here are the steps to apply the method:
-	\begin{enumerate}
-		\item \textbf{Calculated the ratios of historical \emph{paid ULAE} to \emph{paid claims} by calendar year.}\\
-	\end{enumerate}
+	The technique assumes that half of the ULAE are sustained when a claim is opened, while the other half is sustained when it is closed. Hence, \emph{we apply 50\% of the ratio to case outstanding} (since the first half of the expenses is already incurred) and \emph{100\% of the ratio to the IBNR} (since it's not yet reported, no expenses has been incurred). This means :
+	\begin{align*}
+	\text{Unpaid ULAE} = W^{*}\times\left[50\%(\text{Case Outstanding + IBNER}) + 100\%(\text{Pure IBNR}) \right]
+	\end{align*}
+	Usually, the split between IBNR and IBNER isn't available in the data. In that case, we assume IBNER = 0. 
+	
+	The classical approach does not work well for long-tail lines of business, in times when ULAE inflation rates differ	from claims inflation rates, when the insurer is significantly growing or shrinking, or when the 50/50 assumption is not appropriate.\\
 	
 	
 	
 	
+	
+	
+	\subsection{Kittel Technique}
+	
+	The only difference between the Kittel approach and the classical approach is in the estimation of the claims basis ($ \mathbf{B_{i}} $). Instead of using only the paid claims, the Kittel recognizes that the steady-state assumption ($ R = P $) is \emph{flawed for a growing or shrinking book}.
 
 	
 	
