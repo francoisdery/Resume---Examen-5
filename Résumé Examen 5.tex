@@ -844,6 +844,72 @@ In order to calculate an indicated rate or rate change, we need to take into acc
 	
 	
 	
+
+
+
+
+
+\chapter{Case Outstanding Technique}
+
+\section{Technique \#1}
+	In order to use this technique, we need to have access to cumulative paid and reported claims triangles (from which you can calculate the case outstanding triangle). Here are the steps of the method: 
+	\begin{enumerate}
+		\item \textbf{Calculate the INCREMENTAL paid claims triangle.}\\
+		
+		\item \textbf{Calculate the case outstanding triangle.}\\
+		
+		\item \textbf{Calculate the ratio of \emph{incremental paid} to \emph{case oustanding}, and select a ratio per maturity.}\\
+		The ratio is defined as :
+		\begin{align*}
+		\text{Ratio}_{i,j} = \frac{\text{Incremental Paid Claims}_{i,j}}{\text{Case Outstanding}_{i,j}}.
+		\end{align*}
+		This ratio corresponds to the proportion of case outstanding that was paid during the interval $ (j-12, j) $.
+		
+		When te triangle is complete, we select a ratio for each maturity. \textbf{These will be used to develop the incremental paid claim triangle. }\\
+		
+		
+		\item \textbf{Calculate the development factors for the case outstanding triangle.}\\
+		This works just like calculating the developing factors for reported or paid claims. We take the ratio of the case outstanding to the previous case outstanding. \textbf{We select a developing factor for each maturity, that will be used to develop the case outstanding to ultimate levels.} \\
+		
+		
+		
+		\item \textbf{Complete the case outstanding triangle}\\
+		We multiply the previous case outstanding with the selected ratio for the current maturity. This will effectively complete the bottom part of the triangle. \\
+		
+		
+		
+		\item \textbf{Complete the incremental paid claim triangle}\\
+		We complete the bottom part of the triangle. We use the freshly completed triangle of case outstanding with the ratio defined at step \#3. Since we now have case outstanding values for all cells $ (i,j) $, we can also calculated all the cells of the incremental paid triangle with the relationship : 
+		\begin{align*}
+		\text{Incremental Paid Claims}_{i,j} = \left(\text{Ratio}_{i,j}\right) \left(\text{Case Outstanding}_{i,j}\right).\\
+		\end{align*}
+		
+		
+		\item \textbf{Sum up the incremental paid claims for each accident year to have the ultimate cumulative paid claims.}\\
+	\end{enumerate}
+
+
+
+\section{Technique \#2}
+This technique is only usable if \emph{there is no information on the reported and paid claims} for the company; \textbf{only the case outstanding are known}.
+
+In this situation, the insurer can use industry benchmark to calculate a development factor for the case outstanding in order to find then ultimate \emph{unpaid} claims. The factor are always applied to the current case outstanding for each accident year. 
+\begin{tcolorbox}[ams align*]
+\text{Factor} = 1+ \frac{(\text{Rept CDF} - 1)(\text{Paid CDF})}{\text{Paid CDF} - \text{Rept CDF}} 
+\end{tcolorbox}
+The CDF's are all coming from industry benchmark. The ultimate unpaid claims are defined as:
+\begin{align*}
+\text{Ultimate Unpaid Claims} = 
+\left( \begin{minipage}{0.14\linewidth}\centering
+Current Case Outstanding
+\end{minipage}\right)
+\left(1+ \frac{(\text{Rept CDF} - 1)(\text{Paid CDF})}{\text{Paid CDF} - \text{Rept CDF}}  \right)
+\end{align*}	
+In order to calcultate the IBNR, we would subtract the current case outstanding to the ultimate unpaid claims. 
+
+
+
+	
 \chapter{Berquist-Sherman Techniques}
 
 Theses techniques are used when an insurer has to deal with operational changes. Berquist and Sherman propose to ways : 
@@ -863,7 +929,7 @@ The first option has more to do with making wise choices considering the situati
 		\item \textbf{Calculate the disposal rate triangle}. \\
 		As we remember, disposal rates for accident year \emph{i} and age \emph{j} ($ D_{i,j} $)are defined as : 
 		\begin{align*}
-		D_{i,j} = \frac{\text{\# of Closed Claim Count}_{j}}{\text{\# of Ultimate Claim Count}_{i}}.
+		D_{i,j} = \frac{\text{\# of Closed Claim Count}_{j}}{\text{\# of Ultimate \emph{Reported} Claim Count}_{i}}.
 		\end{align*}
 		
 		
@@ -886,7 +952,7 @@ The first option has more to do with making wise choices considering the situati
 	
 		\begin{tabularx}{0.75\textwidth}{ccccclcccc}
 			\toprule
-			\textbf{Accident} & \multicolumn{4}{c}{\textbf{Disposal Rates}} & & \multicolumn{4}{c}{\textbf{Cum. Paid Claims}}\\
+			\textbf{Accident} & \multicolumn{4}{c}{\textbf{Disposal Rates}} & & \multicolumn{4}{c}{\textbf{Avg  Paid Claims}}\\
 			\textbf{Years} & 12 & 24 & 36 & 48 & & 12 & 24 & 36 & 48  \\
 			\midrule
 			2010 & 0.400 & 0.730 & 0.850 & \textbf{0.920} & &  200 & 350 & 450 & 520  \\
@@ -935,7 +1001,7 @@ The first option has more to do with making wise choices considering the situati
  	With both parameters, we can then calculate the adjusted paid claims, with \fbox{$ \hat{Y}_{i,j} = a_{i,j}e^{b_{i,j}X_{i,j}} $}.\\
 	
 	
-	\item \textbf{When the adjusted paid claims triangle is complete, the last step is to calculate the ultimate claims using the development technique.} 
+	\item \textbf{When the adjusted paid claims triangle is complete, the last step is to calculate the ultimate claims using the development technique.} \\
 	
 
 	\end{enumerate}
@@ -945,22 +1011,56 @@ The first option has more to do with making wise choices considering the situati
 
 	
 	
-	\section{Case Adequacy Adjustement}
+	\section{Case Adequacy Adjustment}
 	
-	The last section adjusted \emph{paid} claims. In order to makes adjustment to \emph{reported} claims triangle, we need to determine whether there have been changes in case adequacy, and if so, how to adjust for these changes. 
-
-	Here are the steps of this technique :
+	The last section adjusted \emph{paid} claims. In order to makes adjustment to \emph{reported} claims triangle, we need to determine whether there have been changes in case adequacy, and if so, how to \emph{adjust the case outstanding} for these changes. Here are the steps of this technique :
 	\begin{enumerate}
+		\item \textbf{Calculate the adjusted \emph{open} claim count.}\\
+		To calculate the adjusted \emph{open} claim count, we first need to adjust the closed claim count. \\
+		
+		We calculate the \textbf{adjusted \emph{closed} claim count} by multiplying the \textbf{disposal rates} by the \textbf{projected unadjusted \emph{reported} claim count} (which we usually get in the question). 
+		\begin{align*}
+		\left(\begin{minipage}{0.18\linewidth}\centering
+		Adjusted \emph{Closed} Claims Count
+		\end{minipage}\right)_{i,j} = 
+		\left(\begin{minipage}{0.095\linewidth}\centering
+		Disposal Rate
+		\end{minipage}\right)_{j}
+		\left(\begin{minipage}{0.245\linewidth}\centering
+		Projected Unadjusted \emph{Reported} Claim Count
+		\end{minipage}\right)_{i}
+		\end{align*}
+
+		Then, we calculate the \textbf{adjusted \emph{open} claim count} by subtracting the adjusted closed claim count to the reported claim count. 
+		\begin{align*}
+		\left(\begin{minipage}{0.17\linewidth}\centering
+		Adjusted \emph{Open} Claim Count
+		\end{minipage}\right)_{i,j} = 
+		\left(\begin{minipage}{0.18\linewidth}\centering
+		Reported Claim Count
+		\end{minipage}\right)_{i,j} - 
+		\left(\begin{minipage}{0.17\linewidth}\centering
+		Ajusted \emph{Closed} Claim Count
+		\end{minipage}\right)_{i,j}\\
+		\end{align*}
+		
+		
 		\item \textbf{Calculate the severity trend observed in the average paid claim.}\\
-		On the exam, we most likely habe the severity trend given from the question. Otherwise, we calculate this trend with the average paid claim triangle, and use regression or \% of change to evaluate the change.\\
+		On the exam, we most likely habe the severity trend given from the question. Otherwise, we calculate this trend with the average unadjusted paid claim triangle, and use regression or \% of change to evaluate the change.\\
+		
+		
 		
 		\item \textbf{Calculate the average case reserve triangle.}\\
-		This is calculated by dividing \emph{reported claims} by the \emph{open claim counts}.\\
-		
-		\item \textbf{Calculate the adjusted average case reserves.} 
-		Using the severity trend calculated in the first step, we calculate the adjusted average case reserve by de-trending the latest case outstanding of each accident year by the severity trend. If we write the case reserve for accident year \emph{i} and maturity \emph{j} as $ aCR_{i,j} $ and the latest average case reserve as $ \hat{aCR_{i,j}} $, then we calculate the adjusted average case reserve as : 
+		We calculated the average case reserve (avg $ CR_{i,j} $) by dividing \emph{reported claims} minus \emph{paid claims} by the \emph{adjusted open claim counts}.
 		\begin{align*}
-		\text{Adjusted } aCR_{i,j} = \frac{\hat{aCR}_{i,j}}{(\text{Severity Trend})^{\text{Latest Period} - i}}
+		\text{avg } CR_{i,j} = \frac{\text{Reported Claims} - \text{Paid Claims}}{\text{Adjusted \emph{Open} Claim Count}}\\
+		\end{align*}
+		
+		
+		\item \textbf{Calculate the adjusted average case reserves.} \\
+		Using the severity trend calculated in the first step, we calculate the adjusted average case reserve by de-trending the latest case outstanding of each accident year by the severity trend. If we write  the latest average case reserve as (avg $ CR_{i,j}^{S} $), then we calculate the adjusted average case reserve as : 
+		\begin{align*}
+		\text{Adjusted avg } CR_{i,j} = \frac{\text{avg }CR_{i,j}^{S}}{(\text{Sev Trend})^{\text{Latest Period} - i}}
 		\end{align*}
 		
 		For example, let's say we have a severity trend of 10\% and the following average case reserve triangle, we would have the following adjusted average case reserve:\\
@@ -970,12 +1070,37 @@ The first option has more to do with making wise choices considering the situati
 			\textbf{Accident} & \multicolumn{3}{c}{\textbf{Avg Case Reserve}} & & \multicolumn{3}{c}{\textbf{Adj Avg Case Reserve}}\\
 			\textbf{Years} & 12 & 24 & 36 & & 12 & 24 & 36  \\
 			\midrule
-			2011 & 1000 & 3000 & \textbf{5000} & & $ 1136 = \frac{1375}{1.10^{2}} $ & 400 & 550 \\
-			2012 & 1100 & \textbf{3300} & & & 240 & 420 & \\
-			2013 & \textbf{1375} & &  & & 310 & & \\
+			2011 & 1000 & 3000 & \textbf{5000} & & $ 1136 = 1375/1.10^{2} $ & $ 3000 = 3000/1.10^{1} $ & \textbf{5000} \\
+			2012 & 1100 & \textbf{3300} & & & $ 1250 = 1375/1.10^{1} $ & \textbf{3300} & \\
+			2013 & \textbf{1375} & &  & & \textbf{1375} & & \\
 			\bottomrule
-		\end{tabularx}\\
+		\end{tabularx}\\[10pt]
 		
+		
+		
+		\item \textbf{Calculate adjusted average \emph{reported} claims.}\\
+		We calculate the adjusted average reported claims by  multiplying the adjusted case reserve times the open claims count and adding the cumulative paid claims  :
+		\begin{tcolorbox}[ams align*]
+		\begin{minipage}{0.22\linewidth}\centering
+			Adjusted Average Reported Claims
+		\end{minipage} = 
+		\left(\begin{minipage}{0.18\linewidth}\centering
+			Adjusted Case Reserve
+		\end{minipage}\right)
+		\left(\begin{minipage}{0.15\linewidth}\centering
+			Open Claim Count
+		\end{minipage}\right) + 
+		\begin{minipage}{0.18\linewidth}\centering
+			Cumulative Paid Claim
+		\end{minipage}
+		\end{tcolorbox}
+		
+		
+		IMPORTANT: If there is no changes in the settlement rates, there is no adjustment to make on the paid claims. If there are settlement rates changes, then we have to make both adjustment (case outstanding and paid claims). \\
+	
+	
+	
+		\item \textbf{When the adjusted reported claims triangle is complete, the last step is to calculate the ultimate claims using the development technique.} 
 	\end{enumerate}
 	
 	
