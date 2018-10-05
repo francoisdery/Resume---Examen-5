@@ -1137,11 +1137,11 @@ As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $
 
 
 
-	\subsection{Paid-to-Paid (Classical Technique)}
+\subsection{Paid-to-Paid (Classical Technique)}
 	
 	The assumptions of this method is that the ratio is generally stable through time and that the cost of future claims management activity will be proportional to the IBNR and case outstanding. Hence, in this technique, selected ratio of ULAE to claims ($ \mathbf{W^{*}} $) is estimated using the ratios ($ \mathbf{W_{i}} $) of \emph{paid ULAE} to \emph{paid claims}:
 	\begin{align*}
-	W_{i} = \frac{B_{i}}{M_{i}} = \frac{P_{i}}{M_{i}}
+	W_{i} = \frac{M_{i}}{B_{i}} = \frac{M_{i}}{P_{i}}
 	\end{align*}
 	With all of the ratios $ W_{i} $, we select $ \mathbf{W^{*}} $. 
 	
@@ -1158,25 +1158,90 @@ As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $
 	
 	
 	
-	\subsection{Kittel Technique}
+\subsection{Kittel Technique}
 	
 	The only difference between the Kittel approach and the classical approach is in the estimation of the claims basis ($ \mathbf{B_{i}} $). Instead of using only the paid claims, the Kittel recognizes that the steady-state assumption ($ R = P $) is \emph{flawed for a growing or shrinking book}.
+	
+	Instead, this technique assume that the claim basis for each calendar year ($ \mathbf{b_{i}} $) is the average of the \emph{incurred claims} and the \emph{paid claims} for each year (meaning that $ U_{1} = 0.5, U_{2} = 0.5 $ and $ U_{3} = 0 $). We define the \emph{incurred claims} like :
+	\begin{align*}
+	\text{Incurred Claims} &= \text{Paid Claims} + \text{Change in TOTAL Reserve}\\
+	\textbf{Incurred Claims} &= \textbf{Paid Claims} + \textbf{(Case Outstanding + IBNR)}
+	\end{align*}
+	
+	Using this definition, can define the claim basis per calendar year ($ \mathbf{b_{i}} $) as 
+	\begin{align*}
+	B_{i} = 0.5(\text{Incurred Claims})_{i} + 0.5(\text{Paid Claims})_{i}
+	\end{align*}
+	and the ratios $ \mathbf{W_{i}} $ as 
+	\begin{align*}
+	W_{i} = \frac{M_{i}}{B_{i}} = \frac{M_{i}}{0.5(\text{Incurred Claims})_{i} + 0.5P_{i}}.
+	\end{align*} 
+	
+	With the ratios $ \mathbf{W_{i}} $, we can select $ \mathbf{W^{*}} $ using the same methods as with the classical technique. At this point, the Kittel technique goes back to be equivalent to the classical technique. \emph{We apply 50\% of the ratio to case outstanding and IBNER} (since the first half of the expenses is already incurred) and \emph{100\% of the ratio to the IBNR}, meaning that we define unpaid ULAE as :
+	\begin{align*}
+	\text{Unpaid ULAE} = W^{*}\times\left[50\%(\text{Case Outstanding + IBNER}) + 100\%(\text{Pure IBNR}) \right]
+	\end{align*}
+	
+	Just like the classical technique, the Kittel approach still does not work well when the 50/50 assumption is not appropriate or when ULAE	inflation rates differ from claims inflation rates.\\
+	
+	
+	
+	
+	
+	
+	
+\subsection{Generalized Approach}
+	Here, we define the claim basis $ \mathbf{B_{i}} $ as the proportion of all three types of claims : \emph{reported, paid} and \emph{closed}. In math, that means
+	\begin{align*}
+	B_{i} = U_{1}R_{i} + U_{1}P_{i} + U_{3}C_{i},
+	\end{align*}
+	which also means that we define $ \mathbf{W_{i}} $ as 
+	\begin{align*}
+	W_{i} = \frac{M_{i}}{U_{1}R_{i} + U_{1}P_{i} + U_{3}C_{i}}
+	\end{align*}
+	
+	After choosing a selected ratio $ \mathbf{W^{*}} $, there are 3 ways to estimate the unpaid ULAE, that all use the ultimate claims per accident ear ($ \mathbf{L_{i}} $) in different fashion.
+	
+	\begin{enumerate}
+		\item \textbf{Expected claims approach}:\\
+		In this method, we define the unpaid ULAE as
+		\begin{align*}
+		\text{Unpaid ULAE} = (W^{*} \times L_{i}) - M_{i}
+		\end{align*}
+		This method isn't the most responsive to changes in the ULAE to claim ratio.\\
+		
+		
+		\item \textbf{Bornhuetter-Ferguson approach}\\
+		In this method, we define the unpaid ULAE as
+		\begin{align*}
+		\text{Unpaid ULAE} = W^{*} \times (L_{i} - B_{i})
+		\end{align*}
+		This is the preferred method of the manual. Using a weigthed average of $ W_{i} $ for the selection of $ W^{*} $, this gives the same result as the expected claim approach. \\
+		
+		
+		\item \textbf{Development approach}\\
+		In this method, we define the unpaid ULAE as
+		\begin{align*}
+		\text{Unpaid ULAE} = M_{i}\times (\frac{L_{i}}{B_{i}} - 1)
+		\end{align*}
+		This approach is flawed for two reasons. First, it can be overly responsive to random fluctuations in ULAE emergence. Second, it is practically difficult to quantify ULAE on a accident year basis as we would need $ M $ to correspond the accident years in \emph{L}.
+	\end{enumerate}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+\subsection{Simplified Generalized Approach}	
+	Since it may be difficult to estimate R and C for use in the generalized formula, the manual provides a simplification to the generalized approach to estimate the claims basis:
+	\begin{itemize}
+		\item \emph{R} is approximated using the accident year ultimate claims (\emph{L}) when calculating \emph{W}. Only when calculating \emph{W}, \emph{not in the calcuations of the unpaid ULAE}. 
+		\item We assume that no expense is required to close claims, and so $ U_{3} = 0$ and \emph{C} is no longer needed. 
+	\end{itemize}
+	After those simplifications, and after having selected $ \mathbf{W^{*}} $, we calculate the unpaid ULAE as :
+	\begin{align*}
+	\text{Unpaid ULAE} &=  W^{*} \times (L_{i} - B_{i})\\
+	&= W^{*} \times \left[ \text{Pure IBNR} + U_{2}(\text{Case Oustanding} + \text{IBNER})\right]
+	\end{align*}
 	
 	
 	

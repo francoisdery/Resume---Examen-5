@@ -1,4 +1,4 @@
-\babel@toc {english}{}
+\select@language {english}
 \contentsline {chapter}{Contents}{1}{section*.1}
 \contentsline {part}{\partnumberline {I}Ratemaking (\emph {Werner \& Modlin})}{3}{part.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}
@@ -57,3 +57,5 @@
 \contentsline {section}{\numberline {10.1}Dollar-Based Techniques}{43}{section.10.1}
 \contentsline {subsection}{\numberline {10.1.1}Paid-to-Paid (Classical Technique)}{44}{subsection.10.1.1}
 \contentsline {subsection}{\numberline {10.1.2}Kittel Technique}{44}{subsection.10.1.2}
+\contentsline {subsection}{\numberline {10.1.3}Generalized Approach}{45}{subsection.10.1.3}
+\contentsline {subsection}{\numberline {10.1.4}Simplified Generalized Approach}{46}{subsection.10.1.4}
