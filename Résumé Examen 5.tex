@@ -1105,6 +1105,82 @@ The first option has more to do with making wise choices considering the situati
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+\chapter{ALAE Estimation}
+
+There are 3 common approaches to estimating ALAE : 
+\begin{enumerate}
+	\item Combine the ALAE to the estimate claims, and estimate both together (this is what was done throughout most of the manual). This method may not be accurate if the ALAE have very different development pattern than the claims.
+	\item With only ALAE, use the development technique (or any other techniques) on a ALAE triangle
+	\item Develop a \textbf{\emph{ratio triangle}} of the \emph{paid ALAE to paid claims} or \emph{reported ALAE to reported claims}. 
+\end{enumerate}
+	
+The first two approaches don't have to be elaborated on any further, so we discuss the ratio approach in the rest of the chapter. 
+	
+With the triangle ratio, there is usually two ways of evaluating development : \emph{multiplicatively} (as we've done for any other techniques) or \emph{additively}. Developing additively is usually more stable if the ratios are very small at early maturities. 
+	
+Here is an example using both additive and multiplicative development for the ratios. 
+
+\begin{tabularx}{\textwidth}{c|cccc|ccc}
+	Accident & \multicolumn{3}{c}{Cum. Paid Claims} & Ult. &  \multicolumn{3}{c}{Cum. Paid ALAE}\\
+	Years & 12 months & 24 months  & 36 months  & Claims &  12 months  & 24 months  & 36 months   \\
+	\midrule
+	2011 & 5039 & 5651 & 5651 & 5651 &  701 & 1498 & 1498 \\
+	2012 & 5031 & 5621 & & 5621 &  665 & 1522 & \\
+	2013 & 4909 & &  & 5493 & 675 & & \\
+\end{tabularx}\\
+
+With both tables, we calculate the ratios for each cell.
+
+\begin{tabularx}{0.51\textwidth}{c|ccc}
+	Accident & \multicolumn{3}{c}{Ratio Paid ALAE / Paid Claims} \\
+	Years & 12 months & 24 months  & 36 months   \\
+	\midrule
+	2011 & 0.139 & 0.265 & 0.265  \\
+	2012 & 0.132 & 0.276 &  \\
+	2013 & 0.138 & &  \\
+\end{tabularx}\\
+	
+Next, we evaluate the development either additively or multiplicatively. 
+
+\begin{tabularx}{0.651\textwidth}{c|ccc|ccc}
+	Accident & \multicolumn{3}{c}{Additive}  &  \multicolumn{3}{c}{Multplicative}\\
+	Years & 12-24 & 24-36 & 36-Ult   &  12-24 & 24-36 & 36-Ult   \\
+	\midrule
+	2011 & 0.126 & 0.000 &  &  1.906  & 1.000 &  \\
+	2012 & 0.144 &  & & 2.089 &  & \\
+	\midrule
+	Average & 0.135 & 0.000 & & 1.997 & 1.000 & \\
+	Selected & 0.135 & 0.000 & 0.000 & 1.997 & 1.000 & 1.000\\
+	Cum. Factor & 0.135 & 0.000 & 0.000 & 1.997 & 1.000 & 1.000\\
+\end{tabularx}\\
+	
+With those development factors, we can calculate the ultimate ALAE. For example, for accident year 2013 using the additive factors: 
+\begin{align*}
+\text{Ultimate Ratio} &= 0.138 + 0.135 = 0.272\\[7pt]
+\text{Ultimate ALAE} &= \text{Ultimate Claims}\times\text{Ultimate Ratio}\\
+&= 0.272 * 5493\$\\
+&= 1497\$
+\end{align*}
+	
+	
+	
+	
+	
+	
+	
 
 \chapter{ULAE Estimation}
 
