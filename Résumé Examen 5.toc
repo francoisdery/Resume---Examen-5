@@ -1,4 +1,4 @@
-\select@language {english}
+\babel@toc {english}{}
 \contentsline {chapter}{Contents}{1}{section*.1}
 \contentsline {part}{\partnumberline {I}Ratemaking (\emph {Werner \& Modlin})}{3}{part.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}

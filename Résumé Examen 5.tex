@@ -1239,7 +1239,9 @@ As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $
 	\end{itemize}
 	After those simplifications, and after having selected $ \mathbf{W^{*}} $, we calculate the unpaid ULAE as :
 	\begin{align*}
-	\text{Unpaid ULAE} &=  W^{*} \times (L_{i} - B_{i})\\
+	\text{Unpaid ULAE} &= W^{*} \times \left[ L_{i} - U_{1}R_{i} - U_{2}P_{i}\right]\\
+	&= W^{*} \times \left[ U_{1}(L_{i} - R_{i}) - U_{2}(L_{i} - P_{i})\right]\\
+	&= W^{*} \times \left[ U_{1}(\text{Pure IBNR}) + U_{2}(\text{Case Oustanding} + \text{IBNER}+ \text{Pure IBNR})\right]\\
 	&= W^{*} \times \left[ \text{Pure IBNR} + U_{2}(\text{Case Oustanding} + \text{IBNER})\right]
 	\end{align*}
 	
