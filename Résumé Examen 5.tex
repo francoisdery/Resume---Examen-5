@@ -1391,7 +1391,7 @@ As each consecutive claims-made policy effectively provides more coverage after 
 
 \part{Reserving (\emph{Freidland})}
 	
-	
+
 
 
 
@@ -1404,9 +1404,9 @@ In order to use the development technique, some assumptions have to be made :
 	\item \textbf{The development of future claims will be similar to prior one;}
 	\item \textbf{For immature accident year, the claims observed tell something about the claims yet to be observed;}
 	\item \textbf{Consistent \emph{claim processing} (no change in the speed of processing);}\\
-	If this assumption doesn't stand true, using the paid claims would be a problem for estimating both the ultimate claims and the IBNR.\emph{ A decrease in the claim settlement rates would cause the \% of \textbf{claims paid} to be lower for the most recent diagonals}. This means that applying the \emph{LDFs} without adjustment would underestimate the IBNR and the ultimate claims. The opposite would also be true for an increase in the claim settlement rate. \\
+	If this assumption doesn't stand true, using the \emph{paid claims} would be a problem for estimating both the ultimate claims and the IBNR.\emph{ A decrease in the claim settlement rates would cause the \% of claims paid to be lower for the most recent diagonals}. This means that applying the \emph{LDFs} without adjustment would underestimate the IBNR and the ultimate claims. The opposite would also be true for an increase in the claim settlement rate. \\
 	\item \textbf{Consistent \emph{case outstanding adequacy};}\\
-	
+	If this assumption isn't true, using \emph{reported claims} would be cause a problem when estimating the ultimate claims and the IBNR. \emph{An increase in case outstanding adequacy would translate to the \% of reported claims to be higher in the most recent diagonals}. This means that applying the historical \emph{LDFs} would overstate the IBNR and the ultimate claims. The opposite is also true for a decrease in case outstanding adequacy. 
 	
 	\item \textbf{A stable mix of business.}
 \end{enumerate}
@@ -1427,6 +1427,30 @@ Given the method of determination of \emph{LDF}'s, the \emph{tail factors} are a
 
 
 
+
+
+\chapter{Bornhuetter-Ferguson}
+
+This technique is used in a wide variety of lines of insurance, going from short-tailed to long-tailed.
+
+\section{Calculations}
+The B-F technique is a credibility weighted method between the development technique and estimated ultimate claims. More specifically :
+\begin{tcolorbox}[ams align*]
+\text{Ultimate Claims} = \text{Actual Rep./Paid Claims} + (\text{Expected Claims})(\text{\% Unrep./Unpaid})
+\end{tcolorbox}
+
+The \% unreported or unpaid are determined using the \emph{LDFs} that would be used in the development technique. The expected claims can come from difference source : usually they are the results of a historical loss ratio times the annual earned premium : 
+\begin{align*}
+(\text{Expected Claims})_{i} = LR \times (\text{Earned Premium})_{i}
+\end{align*}
+It's important to not that whatever we use reported or paid claims, the expected claims are always the same. 
+
+
+
+\section{Key Assumptions}
+The key assumption of the method is that unreported/unpaid claims will develop based on the expected claims. That means that the claims already reported/paid don't influence the ultimate claims as much as in the development technique. This is actually the main advantage of the technique : random fluctuation early in immature accident year do not distort the projections significantly. 
+
+Of course, having a changing is never ideal in the context of estimating unpaid claims and IBNR. The B-F method doesn't make exception. Here are some situations in which the estimates might not be accurate : 
 
 
 
