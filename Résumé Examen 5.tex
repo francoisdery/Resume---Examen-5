@@ -11,6 +11,10 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 
+\usepackage{enumitem}
+\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
+\renewcommand\labelitemi{--}
+
 
 %Pour redéfinir le format des titres de sections
 %\usepackage{titlesec}
@@ -45,14 +49,14 @@
 \newenvironment{proof}[1][Démonstration]{\noindent\ }{\ \rule{0.5em}{0.5em}}
 \newenvironment{exemple}
 {
-	\begin{example} \normalfont \ \\ 
+	\begin{example} \normalfont \ \\[5pt] 
 	}
 	{
 		\hfill\rule{0.5em}{0.5em}\end{example}
 }
 
 \newenvironment{solution}
-{\noindent\textbf{Solution:} \\ 
+{\noindent\textbf{Solution:} \\[5pt] 
 }{
 }
 
@@ -69,6 +73,8 @@
 \setlength{\headsep}{11mm}
 \setlength{\topskip}{0mm}
 \setlength{\textheight}{222mm}
+
+
 % Pour enlever l'INDENTATION 
 \setlength\parindent{0pt}
 
@@ -88,7 +94,7 @@
 
 \begin{document}
 	
-	\title{\normalfont\textbf{Exam 5 - Summary}}
+	\title{\normalfont\textbf{CAS Exam 5 - Summary}}
 	\author{François Déry}
 	\date{}
 	\maketitle
@@ -709,52 +715,60 @@
 	\end{tcolorbox}
 	
 	
+	
+	
 	\subsection{Two-Step Trending}
-	We would use two-step trending when we expect the premium trend to change over time, meaning that the historical trend won't necessarily apply to the future rate effective period.
+		We would use two-step trending when we expect the premium trend to change over time, meaning that the historical trend won't necessarily apply to the future rate effective period.
+		\begin{enumerate}
+			\item \textbf{Step \#1 :} \\[10pt]
+			We first adjust historical on-level premiums to the average premium level of \textbf{the most recent period in the historical data} (it can be a quarter, it doesn't have to be a full year). Usually, this is done by calculating the \emph{current trend factor}, which is 
+			
+			\begin{align*}
+			\textbf{Current Premium Trend Factor} = \frac{\text{Latest Average WRITTEN on-level premium}}{\text{Historical average EARNED on-level premium}}.\\
+			\end{align*}
+			This trend factor brings the historical premium to the \textbf{Average WRITTEN date of the latest period of the data}, which is where the step \#2 starts. \\
+			
+			\footnotesize**When the historical average premium is volatile, the actuary can also choose to evaluate a trend based on several points rather than to use the previous ratio. If this method is used, the trending factor is determined just like one-step trending. The \emph{from date} would be the average written date of the policies that have earned premiums in the period, while the \emph{to date} is the average written date of the latest period.\normalsize\\
+			
+			
+			\item \textbf{Step \#2 :}\\[10pt]
+			We apply a \textbf{future trend factor} to project the premium calculate in step \#1 to the future rate effective period. This future trend factor is applied over a trending period, which is defined as : \\
+			
+			\begin{tabular}{ll}
+				\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
+					Average WRITTEN date of the \textbf{latest period} of the trend data.
+				\end{minipage}\\[10pt]
+				\textbf{To} : & \begin{minipage}{0.8\linewidth}
+					Average WRITTEN date of the policies that will be in effect during the rate effective period.
+				\end{minipage}\\ 
+			\end{tabular}
+			
+			Finally, the final trended on-level premium is calculated like this :
+			\begin{align*}
+			\textbf{Trended On-Level Premium} = \  &\text{On-Level Premium} \times\text{Current Trend Factor}\\
+			&\times(\text{Future Trend Factor})^{\text{(length of trending period)}}
+			\end{align*}
+		\end{enumerate} 
+
+
+
 	
-	In two-step trending, there are two steps (thanks captain obvious): 
-	\begin{enumerate}
-		\item Adjust historical on-level premium to the average premium level of \textbf{the most recent point in the trend data}
-		\item Apply a separate trend factor to project the premium calculate in step \#1 to the future rate effective period.
-	\end{enumerate} 
+		\begin{tcolorbox}[adjusted title = \textbf{SHORCUT}]
+			When using two-step trending, a shortcut can usually be applied, coming from the definition of trended on-level premium. If we define $ n $ as the length of the future trending period, and we say that all of the premium in the calculation below are on-level, then we can say:
+			\begin{align*}
+			\text{Trended EP} 
+				&= (\text{EP})_{\text{Histo}} \times (\text{Current Factor}) \times (\text{Future Factor})^{n} \\
+				&= (\text{EP})_{\text{Histo}} \times \frac{(\text{Avg WP})_{\text{Latest}}}{(\text{Avg EP})_{\text{Histo}}} \times (\text{Future Factor})^{n}\\
+				&=  (\text{EP})_{\text{Histo}} \times \frac{(\text{Avg WP})_{\text{Latest}}}{\frac{(\text{EP})_{\text{Histo}}}{(\text{Earned Exp})_{\text{Histo}}} } \times (\text{Future Factor})^{n}
+			\end{align*}
+			This means that we can write the trended earned premium as 
+			\begin{align*}
+			\textbf{Trended EP} 
+				&=  (\textbf{Earned Exp})_{\textbf{Histo}} \times (\textbf{Avg WP})_{\textbf{Latest}} \times (\textbf{Future Factor})^{n}
+			\end{align*}
+			This shortcut is particularly useful, since it means we don't have to calculate the on-level historical premiums to calculate the trended on-level premiums. Of course, \emph{the latest average written premium must be at current rates level}. 
+		\end{tcolorbox}
 	
-	\begin{tcolorbox}[adjusted title = \textbf{Step \#1}]
-		In step \#1, we have two options. First, the current trend factor can be calculate as 
-		\begin{align*}
-		\textbf{Current Premium Trend Factor} = \frac{\text{Latest Average WRITTEN on-level premium}}{\text{Historical average EARNED on-level premium}}.
-		\end{align*}\\
-		
-		When the historical average premium is volatile, the actuary can also choose to evaluate a trend based on several points rather than to use the previous ratio. If this method is used, then the trending factor is determined just like one-step trending, but with the following dates for the period : \\
-				
-		\begin{tabular}{ll}
-		 	\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
-							 		Average WRITTEN date of the policies that have earned premiums in the historical period.
-							 	\end{minipage}\\[10pt]
-		 	\textbf{To} : & \begin{minipage}{0.8\linewidth}
-						 		Average WRITTEN date of the \textbf{latest period} of the trend data.
-						 	\end{minipage}\\ 
-		 \end{tabular}\\
-	\end{tcolorbox}
-	
-	\begin{tcolorbox}[adjusted title = \textbf{Step \#2}]
-		In step \#2, we want to select the amount of average premium that is expected to change annually from the current level to the future rate effective period. We also have to calculate a trend period for which to apply this \textbf{future trend factor}, that is defined as : \\
-		
-		\begin{tabular}{ll}
-		 	\textbf{From} : & 	\begin{minipage}{0.8\linewidth}
-							 		Average WRITTEN date of the \textbf{latest period} of the trend data.
-							 	\end{minipage}\\[10pt]
-		 	\textbf{To} : & \begin{minipage}{0.8\linewidth}
-						 		Average WRITTEN date of the policies that will be in effect during the rate effective period.
-						 	\end{minipage}\\ 
-		\end{tabular}\\[10pt]
-	
-		Finally, the final trended on-level premium is calculated like this :
-		\begin{align*}
-		\textbf{Trended On-Level Premium} = \  &\text{On-Level Premium}\\
-		&*\text{Current Trend Factor}\\
-		&*(\text{Future Trend Factor})^{\text{(length of trending period)}}
-		\end{align*}
-	\end{tcolorbox}
 	
 	
 	
@@ -765,6 +779,26 @@
 	
 	
 \chapter{Losses and ALAE}
+
+
+\section{Excess Losses}
+
+Generally, actuaries remove excess losses and catastrophes from the data and replace them with a loading factor, because those types of losses tend to bring distortion to the data. Indeed, as they are very low in frequency and high in severity, they tend to worsen results of years where those types of events happen. 
+
+The excess loss loading for a loss threshold $ d $ is defined as 
+\begin{align*}
+\text{Excess Loss Factor} = \frac{\sum_{i= 1}^{n}(\text{Excess Losses})_{i}}{\sum_{i = 1}^{n}(\text{Non-Excess Losses})_{i}},
+\end{align*}
+where
+\begin{itemize}
+	\item $ n $ : Total number of years in the data;
+	\item Excess Losses : Part of losses in excess of the loss threshold $ d $;
+	\item Non-Excess Losses : Limited Losses at the loss threshold $ d $
+\end{itemize}
+
+
+
+
 
 
 
@@ -810,6 +844,521 @@ In order to calculate an indicated rate or rate change, we need to take into acc
 	
 	
 	
+
+
+
+
+
+
+
+
+\chapter{Special Classification}
+
+\section{Increased Limit Factors}
+
+
+The increased limit factors ($ ILF $)are used by actuaries to price policies with different limits. The $ ILF $ is basically the differential for the "limit" variable : the $ ILF $ for the base limit is 1, and every other higher limit has $ ILF(H) > ILF_{B} $, where $ H > B  $. 
+
+By making the assumption that frequency is the same regardless of the limit chosen (which isn't always the case), then we define the increased limit factor for limit $ H $ as 
+\begin{align*}
+ILF(H) = \frac{LAS(H)}{LAS(B)},
+\end{align*}
+where 
+\begin{itemize}
+	\item \emph{B} is the basic limit
+	\item $ LAS(H) $ is the \emph{limited average severity} at limit $ H $. This is another way of saying severity limited at $ H $.
+\end{itemize}
+
+The calculations of the \emph{limited average severities} ($ LAS(i) $) differs whether we have access to ground-up losses or not. 
+
+\subsection{Non-Censored (Ground-Up) Losses}
+	Having access to ground-up losses makes the calculations really easy, as to calculate the $ LAS $ one only has to limit losses at the different limits and make the average. For example, let's say I have the following distribution of non-censored losses.
+
+	\begin{tabular}{ccc}
+		Size of Loss & Reported Claims & Losses (\$)\\
+		\midrule
+		$ [0, 100] $ & 500 & 35000\\
+		$ [100, 500] $ & 250 & 80000\\
+		$ [500,  \infty [ $ & 50 & 40000
+	\end{tabular}
+
+	Then we would have: 
+	\begin{align*}
+	LAS(100) &= \frac{35000 + 100(250 + 50)}{500 + 250 + 50} = 81.25,\\[10pt]
+	LAS(500) &= \frac{35000 + 80000 +  500(50)}{500 + 250 + 50} = 175.00.
+	\end{align*}
+	This means that the increased limit factor at 500 is 
+	\begin{align*}
+	ILF(500) = \frac{LAS(500)}{LAS(100)} = \frac{175.00}{81.25} = 2.154.\\
+	\end{align*}
+
+
+
+\subsection{Censored Losses}
+This is usually what we have to work with. We don't have all the ground-up losses, we only have losses that are limited at their respective limits. That makes harder to evaluate the \emph{limited average severity} for limits greater than the basic one, because\emph{ all the losses on policies that have the basic limit can't be used} (since they are limited at $ B $). To circumvent this problem, we add the severity for each layer of losses to \emph{LAS(B)} to find the other \emph{LAS}'s. In math, that means : 
+\begin{align*}
+LAS(H_{i}) = LAS(H_{i - 1}) + LAS(H_{i-1} < X \leq H_{i})\Pr(X > H_{i-1})
+\end{align*}
+where
+\begin{itemize}
+	\item $ H_{0} $ = B, the basic limit
+	\item $ LAS(H_{i-1} < X \leq H_{i}) $ is the limited average severity for the losses between  $ H_{i-1} $ and $ H_{i} $. 
+\end{itemize}
+By the preceding definition, that means that in order to find the limited average severity for a high limit, the actuary needs to have previously calculated all \emph{LAS} for the lower limits. Here is an example. 
+
+\begin{exemple}
+	This example is inspired by the \#10 of the TIA Practice Exam 5 \#1. \\
+	We want the 1000\$ \emph{ILF} using the information below, knowing that the basic limit is 100\$. 
+	
+	\begin{tabularx}{0.88\linewidth}{c|cc|cc|cc}
+		\toprule
+		\multicolumn{1}{c}{}& \multicolumn{2}{c}{100 Policy Limit} & \multicolumn{2}{c}{500 Policy Limit} & \multicolumn{2}{c}{1000 Policy Limit} \\
+		Loss Amount & Losses & \# of Claims & Losses & \# of Claims & Losses & \# of Claims\\
+		\midrule
+		$ ]0, 100] $ 	& 22000 & 500 	& 5200	 	& 200 	& 9800 		& 350\\
+		$ ]100, 500] $ 	&  		&  		& 22800 	& 120 	& 45850 	& 245\\
+		$ ]500, 1000]$ 	&  		&  		& 		 	& 	 	& 12150 	& 18\\
+		\bottomrule
+	\end{tabularx}
+
+	\begin{solution}
+		As we want $ ILF(1000) $, we have to calculate \emph{LAS}'s for all the limits. First, we have : 
+		\begin{align*}
+		\mathbf{LAS(100)} 	&= \frac{22000 + 5200 + 9800 + 100(120 + 245 + 18)}{500 + 200 + 350 + 120 + 245 + 18}\\
+					&= 52.547.
+		\end{align*}
+		Notice that for $ LAS(100) $, we can use all the losses of the book, since no losses in censored at a lower point than 100. 
+		
+		Next, we need to calculate $ LAS(100 < X \leq 500) $ in order to have $ LAS(500) $. In order to calculate this, we can't be using the losses coming from 100\$ limit policies. 
+		\begin{align*}
+		\mathbf{LAS(100 < X \leq 500)} 	&= \frac{22800 + 45850 + 500(18) \mathbf{- 100(120 + 245 + 18)}}{\mathbf{120 + 245 + 18}}\\
+								&= 102.741
+		\end{align*}
+		Notice that since we want the severity \textbf{in the layer} $ ]100, 500] $, we have to subtract 100\$ to all of the losses. Also, since we only used the policies that have a limit higher than 100, we divided by $ 120 + 245 + 18 = 383 $ instead of by 1433 (total number of claims). Next we have to calculate the probability of having a claim higher than 100\$. 
+		\begin{align*}
+		\mathbf{\Pr(X > 100)} 	&= \frac{120 + 245 + 18}{\mathbf{200 + 350} + 120 + 245 + 18}\\
+								&=0.4105
+		\end{align*}
+		Notice that we only took the claims for policies of limit 500\$ or 1000\$, since they are the only ones that can have losses over 100\$. With that information, we can calculate $ LAS(500) $.
+		\begin{align*}
+		\mathbf{LAS(500)} 	&= \mathbf{LAS(100) + LAS(100 < X \leq 500) \Pr(X > 100)}\\
+							&=52.547 + 102.741 \times 0.4105\\
+							&= 94.722
+		\end{align*}
+		
+		Now, we only have to calculate $  LAS(500 < X \leq 1000) $ and  $\Pr(X > 500) $ in order to be able to calculate $ ILF(1000) $.
+		\begin{align*}
+		 \mathbf{LAS(500 < X \leq 1000)} &= \frac{12150 \mathbf{- 18(500)}}{18}\\
+		 						&= 175.00\\[10pt] 
+		 \mathbf{\Pr(X > 500)} 	&= \frac{18}{350 + 245 + 18}\\
+		 				&= 0.0294
+		\end{align*}
+		With those, we now find
+		\begin{align*}
+		\mathbf{LAS(1000)} 	&= \mathbf{LAS(500) +  LAS(500 < X \leq 1000) \Pr(X > 500)}\\
+					&= 94.722 + 175.00\times 0.0294\\
+					&= 99.862
+		\end{align*}
+		and finally 
+		\begin{align*}
+		\mathbf{ILF(1000)} 	&= \mathbf{\frac{LAS(1000)}{LAS(100)}}\\
+					&= \frac{99.862}{52.547}\\
+					&= \fbox{\textbf{1.90041}}
+		\end{align*}
+	\end{solution}
+\end{exemple}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Credibility}
+
+Credibility is a \emph{measure of the predictive value in a given application that the actuary attaches to a particular body of data}. The amount of credibility, $ Z $, should always meet the following three criteria : 
+\begin{enumerate}[]
+	\item $ 0 \leq Z \leq 1  $;
+	\item $ Z $ should increase as the size of the risk increases;
+	\item As the size of the risk increases, $ Z $ should increase at a decreasing rate.
+\end{enumerate}
+In the exam, if not stated otherwise, Z is always defined as : 
+\begin{align*}
+Z = \sqrt{\frac{Y}{\E[Y]}}
+\end{align*}
+where $ Y $ is the observed number of claims and $ \E[Y] $ is the standard for full credibility. Usually, the credible estimate is defined as 
+\begin{align*}
+\text{Estimate} = Z \times \text{Observed Experience} + (1-Z)\times \text{Complement of Credibility}.
+\end{align*}
+There are several methods of credibility described in the manual; as of right now they will not be included in this summary for lack of time. What we describe next are the several methods to calculate a proper \emph{complement of credibiliity} explained in the manual. 
+
+A \emph{complement of credibility} should have those qualities : 
+\begin{itemize}
+	\item Accurate;
+	\item Unbiased;
+	\item Statistically independent from the base statistic;
+	\item Available;
+	\item Easy to compute;
+	\item Logical in relation to the base statistic.
+\end{itemize}
+By accurate, we mean that its error variance should be as low as possible, while by unbiased mean that the complement should not be to high or to low on average. Basically, it should be precise and on target.  
+
+
+
+\section{Loss Costs of a Larger Group (Including the Group being Rated)}
+
+Goes with the name of the method, you choose a larger group that includes the group rated to be the complement. 
+
+Next.
+
+\section{Loss Costs of a Larger Related Group}
+
+By contrast to the first method, this method uses a larger and related group as complement of credibility. This means that the larger group \emph{does not include} the group being rated, it's a separate but similar large group. For example, we could use the data from a larger and adjacent state.
+
+Next.
+
+
+
+\section{Rate Change from a Larger Group Applied to Present Rates}
+
+The first two approaches are either not statistically independent or biased complements of credibility. This third approach mitigates the bias by using the subject group's experience with a factor from a larger group. The complement ($ C $) is written as : 
+\begin{tcolorbox}[ams align*]
+C = \text{Current Pure Premium of Subject} \times \left( \frac{\text{Larger Group \emph{Indicated} Pure Premium}}{\text{Larger Group \emph{Current} Pure Premium}} \right) 
+\end{tcolorbox}
+This complement is largely unbiased, accurate is the rate change (between indicated and current rates) is relatively small and logical. The independence depends on the size of the larger group relative to the subject group. 
+
+
+
+
+
+
+
+\section{Harwayne's Method}
+This method is to be used when the subject and the related experience have significantly different distributions. Also, \emph{the related groups must exclude the subject experience}. The easiest way to see the method is that it combines the experiences of a lot of groups, by adjusting all the groups so that they can be compared on the same base as the subject group. 
+
+Let's illustrate the steps with an example. We have the following data, from which we will calculate a complement of credibility for Class 1 of State A, by using the data of Class B and C : 
+
+\begin{tabular}{cccc}
+	State & Class & Exposure & Pure Premium\\
+	\midrule
+	A & 1 & 100  & 2.50 \\
+	& 2 & 125 & 4.00 \\
+	\midrule
+	B & 1 & 190 & 3.16 \\
+	& 2 & 325 & 4.62\\
+	\midrule
+	C & 1 & 180 & 2.78 \\
+	& 2 & 450 & 4.00 \\
+\end{tabular}
+
+\subsection*{Step 1 : Average pure premium the subject group}
+
+This is the weighted average of the pure premium by the exposure, ie : 
+\begin{align*}
+\mean{L}_{A} 	&= \frac{\sum_{i = 1}^{2} X_{A,i}P_{A, i}}{\sum_{i = 1}^{2} X_{A,i}}\\
+				&= \frac{(100)(2.50) + (125)(4.00)}{100 + 250}\\
+				&= 3.33.
+\end{align*}
+
+\subsection*{Step 2 : Average pure premium of the related groups, based on the exposures of the subject group.}
+
+In our examples, the related group are State $ B $ and \emph{C}. Based on the exposures of State \emph{A}, we have 
+\begin{align*}
+\hat{L}_{B} 	&= \frac{\sum_{i = 1}^{2} X_{A,i}P_{B, i}}{\sum_{i = 1}^{2} X_{A,i}}\\
+				&= \frac{(100)(3.16) + (125)(4.62)}{100+125}\\
+				&= 3.97
+\end{align*}
+and
+\begin{align*}
+\hat{L}_{C} 	&= \frac{\sum_{i = 1}^{2} X_{A,i}P_{C, i}}{\sum_{i = 1}^{2} X_{A,i}}\\
+				&= \frac{(100)(2.78) + (125)(4.00)}{100+125}\\
+				&= 3.46.
+\end{align*}
+
+\subsection*{Step 3 : Adjustment Factors}
+The adjustment factors will be applied to the experience of each Class 1 from both State B and C, in order to adjust for the difference in pure premium with State A. The adjustment factors are calculated as : 
+\begin{align*}
+F_{B} 	&= \frac{\mean{L}_{A}}{\hat{L}_{B}}\\
+		&= \frac{3.33}{3.97} = 0.84
+\end{align*}
+and 
+\begin{align*}
+F_{C} 	&= \frac{\mean{L}_{A}}{\hat{L}_{C}}\\
+		&= \frac{3.33}{3.46} = 0.96
+\end{align*}
+
+
+\subsection*{Step 4 : Adjusted Pure Premium for Related Groups}
+With the previously calculated adjustment factors, we now adjust the experience of each of the Class 1 for State \emph{B} and \emph{C}. 
+\begin{align*}
+\hat{L}_{B, 1} &= \mean{L_{B,1}} \times F_{B},\\
+\hat{L}_{C, 1} &= \mean{L_{C,1}} \times F_{C}.\\
+\end{align*}
+Which gives 
+\begin{align*}
+\hat{L}_{B, 1} &=  3.16 \times 0.84 = 2.65,\\
+\hat{L}_{C, 1} &= 2.78 \times 0.96 = 2.67.\\
+\end{align*}
+
+
+\subsection*{Step 5 : Complement of Credibility}
+
+The last thing to do is to calculate the complement of credibility, which is the weighted average of the adjusted pure premiums previously calculated. In our example, that means : 
+\begin{align*}
+C 	&= \frac{\hat{L}_{B,1} \times X_{B,1} + \hat{L}_{C,1} \times X_{C,1}}{X_{B,1} + X_{C, 1}}\\
+	&= \frac{2.65\times 190 + 2.67 \times 180}{190+180}\\
+	&= 2.66
+\end{align*}
+
+
+
+\section{Trended Present Rates}
+We use this method in the event where there is no larger group to have as a complement. The logic is that if there is no other complement, we might as well use the previous indicated change for credibility. There is two types of complement here, depending  on if we want to have a complement for a \emph{rate} or a \emph{rate change}. 
+
+We define $ n $ as the length of time between \emph{the effective date of the last review and the effective date of the next rate change}. 
+
+If we want credibility for a \emph{rate}, then the complement is :
+\begin{align*}
+C = \text{Present Rate}\times (\text{Loss Trend Factor})^{n} \times \frac{\text{Prior \emph{Indicated} Pure Premium}}{\text{Prior \emph{Implemented} Pure Premim}}
+\end{align*}
+
+As for a \emph{rate change}, the complement is calculated like :
+\begin{align*}
+C = \left(\frac{\text{Loss Trend Factor}}{\text{Premium Trend Factor}}\right)^{n} \left(\frac{\text{Prior \emph{Indicated} Pure Premium}}{\text{Prior \emph{Implemented} Pure Premim}}\right) 
+\end{align*}
+
+
+
+
+
+
+\section{Excess Ratemaking : Increased Limits Analysis}
+To calculate complement of credibility for policies with limits (excess ratemaking), the manual presents 3 methods (4 actually, but the last one is to use a continuous distribution, whish is never going to be in an exam question). This is the first one. We calculate the complement for the layer of losses between $ A $ and $ (A + L) $. 
+\begin{align*}
+C = L_{A} \left( \frac{ILF_{A+L} - ILF_{A}}{ILF_{A}} \right) 
+\end{align*}
+\begin{itemize}
+	\item $ L_{A} $ are the losses capped at A; 
+	\item $ ILF_{i} $ is the increased limit factor for limit $ i $. 
+\end{itemize}
+
+
+
+
+\section{Excess Ratemaking : Lower Limits Analysis}
+This method looks a lot like the first one. We still calculate the complement for the layer of losses between $ A $ and $ (A + L) $, the only difference is that we now use a lower limit as base, because \emph{we don't have access to the losses at the upper limit}, or because \emph{the data is to sparse}.   
+\begin{align*}
+C = L_{d} \left( \frac{ILF_{A+L} - ILF_{A}}{ILF_{d}} \right) 
+\end{align*}
+\begin{itemize}
+	\item $ d \leq A $
+	\item $ L_{d} $ are the losses capped at the lower limit $ d $; 
+	\item $ ILF_{i} $ is the increased limit factor for limit $ i $. 
+\end{itemize}
+
+
+\section{Excess Ratemaking : Limits Analysis}
+
+Again, we want a complement for the losses in the layer $ A $ and $ A + L $. It's calculated as : 
+\begin{align*}
+C = 
+\begin{cases}
+LR \times \sum_{\forall d \geq A} P_{d} \times \left( \frac{ILF_{\min(d, A+L)} - ILF_{A}}{ILF_{d}} \right) \quad & \text{if } d\geq A; \\
+0 \quad & \text{otherwise}.
+\end{cases}
+\end{align*}
+\begin{itemize}
+	\item \emph{LR} = Expected Loss Ratio;
+	\item  $ P_{d} $ = Total premium for policies with limit $ d $;
+	\item $ ILF_{i} $ = Increased limit factor for limit $ i $.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Commercial Lines Rating}
+
+
+\section{Experience Rating : ISO Rating Plan}
+
+The formula for the experience modification is : 
+\begin{align*}
+\text{Mod} = Z \times \left(\frac{AER - EER}{EER}\right)
+\end{align*}
+where
+\begin{itemize}
+	\item \emph{AER} : Actual experience ratio;
+	\item \emph{EER} : Expected experience ratio;
+	\item \emph{Z} : Credibility Factor.
+\end{itemize}
+
+Usually, the actual experience ratio (\emph{AER}) is the harder component to calculate. It measures how the actual loss experience of the company was relative to the expected loss experience described in the ISO manual. It's define as 
+\begin{align*}
+AER = \frac{\text{Projected Ult. Losses and ALAE Limited at Basic Limit and MSL}}{\text{Company Subject Loss Cost}}
+\end{align*}
+The expected experience ratio (\emph{EER}) is basically a a measure of the expected deviation of the company's experience related to the expected loss experience described in the ISO manual. The \emph{EER} is defined as : 
+\begin{align*}
+EER = \frac{\text{Expected Ult. Losses and ALAE Limited at Basic Losses and MSL}}{\text{Company Subject Loss Cost}}
+\end{align*}
+Here are the steps of the methods to calculate the experience modification factor (Mod): 
+\begin{enumerate}
+	\item \textbf{Calculate Expected Losses at Basic Limit}\\
+	They are defined as the insurer's expected \emph{Loss Ratio} times the earned premium for the basic limits policies. 
+	\begin{align*}
+	\text{Losses at Basic Limit} &= \text{Expected LR} \times \text{Premium at basic limit}\\
+	\end{align*}
+	
+	\item  \textbf{De-trend the Basic Losses to Calculate the Company Subject Loss Cost (CSLC) per Year}\\
+	Since the basic losses are trended to the present (because of the premiums), we have to de-trend them to make them more comparable to the actual losses from each years: 
+	\begin{align*}
+	CSLC_{i} = (\text{Basic Losses})_{i}(\text{De-Trend Factor})_{i}
+	\end{align*}
+	
+	\item \textbf{Calculate the Total Company Subject Loss Cost}\\
+	This is done by summing all of subject losses calculated in the previous step :
+	\begin{align*}
+	\text{Total Company Subject Loss Cost (\emph{CSLC})} = \sum_{i = 1}^{n} (\text{CSLC})_{i} 
+	\end{align*}
+	\emph{This is the denomimator for both the AER and the EER}.\\
+	
+	\item \textbf{If not given in the question, calculate the EER}\\
+	
+	\item \textbf{Calculate the Total Expected Development on the Subject Losses}\\
+	This is the sum of the company subject loss cost per year times the \emph{EER} and the percentage of unreported claims.
+	\begin{align*}
+		\text{Expected Development} = \sum_{i=1}^{n}CSLC_{i}\times EER \times (\% \text{Unreported claims})_{i} 	
+	\end{align*}
+	\emph{This is used to calculate the Projected Ultimate Losses and ALAE, this numerator of the AER}. \\
+	
+	\item \textbf{Calculate the Projected Ult. Losses and ALAE}\\
+	To do this, we want to cap the actual losses at the basic limit and add the expected development calculated in the previous step. \emph{With this, we have everything to calculate the AER}. \\
+	
+	\item \textbf{Calculate the Modification Factor}.
+\end{enumerate}
+
+Here is an example of a problem of that nature :
+\begin{exemple}
+	This is the \#15 of the TIA practice Exam 5 \#1. Given the following data for one year of experience, we want to calculate the experience modification factor for this company. 
+	\begin{center}
+		\begin{tabular}{ccc}
+			& Loss & ALAE\\
+			Claim 1 &15000 & 15000\\
+			Claim 2 &35000 & 10000
+		\end{tabular}
+	\end{center}
+
+	\begin{itemize}
+		\item Basic limit : 25000\$
+		\item Current basic limit premium : 100000\$
+		\item De-trend factor : 0.85
+		\item Expected \% of basic limit loss and ALAE unreported : 20\%
+		\item Expected LR : 0.80
+		\item We assume no Maximum Single Loss (MSL)
+	\end{itemize}
+
+\begin{solution}
+	First, since we are told that there is no maximum single loss, the EER is equal to 1. We have to start by calculating the company subject loss cost. In order to do that, we have to de-trend the losses at basic limit, which are calculate as : 
+	\begin{align*}
+	\textbf{Losses at Basic Limit} &= \textbf{Expected LR} \times \textbf{Premium at basic limit}\\
+	&= 0.7 \times 100 000\\
+	&= 70 000
+	\end{align*}
+	So, after de-trending we have : 
+	\begin{align*}
+	\mathbf{CSLC} &= \textbf{Losses at Basic Limit} \times \textbf{De-Trend Factor}\\
+	&= 70000 \times 0.85\\
+	&= 59500
+	\end{align*}
+	
+	Next, we want to calculate the expected development of losses : 
+	\begin{align*}
+	\text{Expected Dev.} &= CSLC \times \text{\% Unreported Claims}\\
+	&= 59500\times 0.2
+	&= 11900
+	\end{align*}
+	This will be used to calculate the projected ultimate losses and ALAE. Next, we have to calculate the actual losses, capped at the basic limit. 
+	
+	\begin{tabular}{cccc}
+		& Loss & ALAE& Loss Capped at 25 k\$ + ALAE\\
+		Claim 1 &15000 & 15000 & 30000\\
+		Claim 2 &35000 & 10000 & 35000\\
+	\end{tabular}
+
+	This means that we have (30000 + 35000) = 65000\$ limited losses. With that, we have everything we need to calculate the \emph{AER} :
+	\begin{align*}
+	AER &= \frac{\text{Projected Ult. Losses and ALAE Limited at Basic Limit and MSL}}{\text{Company Subject Loss Cost}}\\
+	&= \frac{65000 + 11900}{59500}\\
+	&= 1.292
+	\end{align*}
+	Finally, knowing that the \emph{EER} is equal to 1 and that we have 80\% credibility, the experience modification factor is 
+	\begin{align*}
+	\text{Mod} &= Z \times \left(\frac{AER - EER}{EER}\right)\\
+	&= 0.8 \left(\frac{1.292 - 1}{1} \right) \\
+	&= 0.234
+	\end{align*}
+	So the Mod is a 23.4\% debit. 
+\end{solution}
+\end{exemple}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Claims-Made Ratemaking}
+
+Claims-made policies cover claims that are \emph{reported} during the effective policiy period, no matter when the claim occurred. The coverage trigger is the reporting of the claim. 
+
+Upon the first purchase of a claims-made policy, the claim occurrence date is generally restricted to the start of the claims-made policy via a provision called the \emph{retroactive date}. This makes it so that the policy only covers claims that occurred after the retroactive date (is the retroactive date is the start of the first claims-made policy, then it only covers claims that happen in he first year).
+
+Separate coverage called \emph{nose coverage} and \emph{tail coverage} can sometimes be purchased with claims-made policies to extend the coverage after the inception and after the expiry of the policy. This ensures that there is no gap in coverage. 
+
+When a claims-made policy is purchased, it will be a first-year policy, as it usually has a retroactive date that corresponds with the start of the first effective period. \emph{The first-year claims-made policy will only cover claims that occur after the retroactive date} and that are reported during the policy term. 
+
+At renewal, the insured will obtain a second-year claims-made policy. This policy still only covers claims that are reported during that second year, but theses claims could have occurred at any time after the initial retroactive date (at the start of the first year, usually). 
+
+This logic goes on until the policy is considered, meaning that it covers all claims. This comes from the assumption that enough time has past from the first-year policy that all claims that could occur have occurred. 
+
+
+As each consecutive claims-made policy effectively provides more coverage after each renewal, the premium will increase with each policy term (that's because after each renewal, the expected costs increase).This premium increase is usually computed using \emph{step-factors}. 
+
 
 
 
@@ -1167,11 +1716,11 @@ Next, we evaluate the development either additively or multiplicatively.
 	Cum. Factor & 0.135 & 0.000 & 0.000 & 1.997 & 1.000 & 1.000\\
 \end{tabularx}\\
 	
-With those development factors, we can calculate the ultimate ALAE. For example, for accident year 2013 using the additive factors: 
+With those development factors, we can calculate the ultimate ALAE by \emph{developing the current ratios to their ultimate level} and then using the ultimate ratios with ultimate claims to have the ultimate ALAE. For example, for accident year 2013 using the additive factors: 
 \begin{align*}
-\text{Ultimate Ratio} &= 0.138 + 0.135 = 0.272\\[7pt]
-\text{Ultimate ALAE} &= \text{Ultimate Claims}\times\text{Ultimate Ratio}\\
-&= 0.272 * 5493\$\\
+\textbf{Ultimate Ratio} &= 0.138 + 0.135 \\&= 0.272\\[7pt]
+\textbf{Ultimate ALAE} &= \textbf{Ultimate Claims}\times\textbf{Ultimate Ratio}\\
+&= 0.272 \times 5493\$\\
 &= 1497\$
 \end{align*}
 	
@@ -1310,17 +1859,18 @@ As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $
 \subsection{Simplified Generalized Approach}	
 	Since it may be difficult to estimate R and C for use in the generalized formula, the manual provides a simplification to the generalized approach to estimate the claims basis:
 	\begin{itemize}
-		\item \emph{R} is approximated using the accident year ultimate claims (\emph{L}) when calculating \emph{W}. Only when calculating \emph{W}, \emph{not in the calcuations of the unpaid ULAE}. 
+		\item \emph{R} is approximated using the accident year ultimate claims (\emph{L}) when calculating \emph{W}. \emph{Only when calculating \emph{W}, \textbf{not in the calcuations of the unpaid ULAE}}. 
 		\item We assume that no expense is required to close claims, and so $ U_{3} = 0$ and \emph{C} is no longer needed. 
 	\end{itemize}
 	After those simplifications, and after having selected $ \mathbf{W^{*}} $, we calculate the unpaid ULAE as :
 	\begin{align*}
 	\text{Unpaid ULAE} &= W^{*} \times \left[ L_{i} - U_{1}R_{i} - U_{2}P_{i}\right]\\
 	&= W^{*} \times \left[ U_{1}(L_{i} - R_{i}) - U_{2}(L_{i} - P_{i})\right]\\
-	&= W^{*} \times \left[ U_{1}(\text{Pure IBNR}) + U_{2}(\text{Case Oustanding} + \text{IBNER}+ \text{Pure IBNR})\right]\\
-	&= W^{*} \times \left[ \text{Pure IBNR} + U_{2}(\text{Case Oustanding} + \text{IBNER})\right]
+	&= \mathbf{W^{*} \times \left[ U_{1}(\textbf{Pure IBNR}) + U_{2}(\textbf{Case Oustanding} + \textbf{IBNER}+ \textbf{Pure IBNR})\right]}\\
+	&= \mathbf{W^{*} \times \left[ \textbf{Pure IBNR} + U_{2}(\textbf{Case Oustanding} + \textbf{IBNER})\right]}
 	\end{align*}
 	
+	This last definition implies that $ (L_{i} - P_{i}) = (\text{Case Oustanding} + \text{IBNER}+ \text{Pure IBNR}) $ and that $ (L_{i} - R_{i}) = \text{Pure IBNR} $.
 	
 	
 	

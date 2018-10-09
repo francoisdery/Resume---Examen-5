@@ -1,4 +1,4 @@
-\babel@toc {english}{}
+\select@language {english}
 \contentsline {chapter}{Contents}{1}{section*.1}
 \contentsline {part}{\partnumberline {I}Ratemaking (\emph {Werner \& Modlin})}{3}{part.1}
 \contentsline {chapter}{\chapternumberline {1}Introduction}{5}{chapter.1}
@@ -30,33 +30,50 @@
 \contentsline {chapter}{\chapternumberline {5}Premiums}{21}{chapter.5}
 \contentsline {section}{\numberline {5.1}Premium Aggregation}{21}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}Written Premiums}{21}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Earned Premiums}{22}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Earned Premiums}{21}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}In-Force Premiums }{22}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Calculation of Blocks of Policies}{22}{subsection.5.1.4}
 \contentsline {section}{\numberline {5.2}Adjustment To Premium : Extension of Exposures}{22}{section.5.2}
 \contentsline {section}{\numberline {5.3}Parallelogram Method}{22}{section.5.3}
 \contentsline {section}{\numberline {5.4}Premium Development}{25}{section.5.4}
-\contentsline {section}{\numberline {5.5}Exposure trend}{26}{section.5.5}
+\contentsline {section}{\numberline {5.5}Exposure trend}{25}{section.5.5}
 \contentsline {section}{\numberline {5.6}Premium trend (One/Two-Step Trending)}{26}{section.5.6}
 \contentsline {subsection}{\numberline {5.6.1}One-Step Trending}{26}{subsection.5.6.1}
 \contentsline {subsection}{\numberline {5.6.2}Two-Step Trending}{27}{subsection.5.6.2}
 \contentsline {chapter}{\chapternumberline {6}Losses and ALAE}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Excess Losses}{29}{section.6.1}
 \contentsline {chapter}{\chapternumberline {7}UW Expenses Ratios}{31}{chapter.7}
 \contentsline {section}{\numberline {7.1}Variable Expense Ratio}{31}{section.7.1}
 \contentsline {section}{\numberline {7.2}Fixed Expenses Ratio}{31}{section.7.2}
 \contentsline {subsection}{\numberline {7.2.1}Premium-based method}{31}{subsection.7.2.1}
 \contentsline {subsection}{\numberline {7.2.2}Exposure-based method}{32}{subsection.7.2.2}
-\contentsline {part}{\partnumberline {II}Reserving (\emph {Freidland})}{33}{part.2}
-\contentsline {chapter}{\chapternumberline {8}Case Outstanding Technique}{35}{chapter.8}
-\contentsline {section}{\numberline {8.1}Technique \#1}{35}{section.8.1}
-\contentsline {section}{\numberline {8.2}Technique \#2}{36}{section.8.2}
-\contentsline {chapter}{\chapternumberline {9}Berquist-Sherman Techniques}{37}{chapter.9}
-\contentsline {section}{\numberline {9.1}Claim Settlement Rates Changes}{37}{section.9.1}
-\contentsline {section}{\numberline {9.2}Case Adequacy Adjustment}{39}{section.9.2}
-\contentsline {chapter}{\chapternumberline {10}ALAE Estimation}{43}{chapter.10}
-\contentsline {chapter}{\chapternumberline {11}ULAE Estimation}{45}{chapter.11}
-\contentsline {section}{\numberline {11.1}Dollar-Based Techniques}{45}{section.11.1}
-\contentsline {subsection}{\numberline {11.1.1}Paid-to-Paid (Classical Technique)}{46}{subsection.11.1.1}
-\contentsline {subsection}{\numberline {11.1.2}Kittel Technique}{46}{subsection.11.1.2}
-\contentsline {subsection}{\numberline {11.1.3}Generalized Approach}{47}{subsection.11.1.3}
-\contentsline {subsection}{\numberline {11.1.4}Simplified Generalized Approach}{48}{subsection.11.1.4}
+\contentsline {chapter}{\chapternumberline {8}Special Classification}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}Increased Limit Factors}{33}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Non-Censored (Ground-Up) Losses}{33}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Censored Losses}{34}{subsection.8.1.2}
+\contentsline {chapter}{\chapternumberline {9}Credibility}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}Loss Costs of a Larger Group (Including the Group being Rated)}{38}{section.9.1}
+\contentsline {section}{\numberline {9.2}Loss Costs of a Larger Related Group}{38}{section.9.2}
+\contentsline {section}{\numberline {9.3}Rate Change from a Larger Group Applied to Present Rates}{38}{section.9.3}
+\contentsline {section}{\numberline {9.4}Harwayne's Method}{38}{section.9.4}
+\contentsline {section}{\numberline {9.5}Trended Present Rates}{40}{section.9.5}
+\contentsline {section}{\numberline {9.6}Excess Ratemaking : Increased Limits Analysis}{41}{section.9.6}
+\contentsline {section}{\numberline {9.7}Excess Ratemaking : Lower Limits Analysis}{41}{section.9.7}
+\contentsline {section}{\numberline {9.8}Excess Ratemaking : Limits Analysis}{41}{section.9.8}
+\contentsline {chapter}{\chapternumberline {10}Commercial Lines Rating}{43}{chapter.10}
+\contentsline {section}{\numberline {10.1}Experience Rating : ISO Rating Plan}{43}{section.10.1}
+\contentsline {chapter}{\chapternumberline {11}Claims-Made Ratemaking}{47}{chapter.11}
+\contentsline {part}{\partnumberline {II}Reserving (\emph {Freidland})}{49}{part.2}
+\contentsline {chapter}{\chapternumberline {12}Case Outstanding Technique}{51}{chapter.12}
+\contentsline {section}{\numberline {12.1}Technique \#1}{51}{section.12.1}
+\contentsline {section}{\numberline {12.2}Technique \#2}{52}{section.12.2}
+\contentsline {chapter}{\chapternumberline {13}Berquist-Sherman Techniques}{53}{chapter.13}
+\contentsline {section}{\numberline {13.1}Claim Settlement Rates Changes}{53}{section.13.1}
+\contentsline {section}{\numberline {13.2}Case Adequacy Adjustment}{55}{section.13.2}
+\contentsline {chapter}{\chapternumberline {14}ALAE Estimation}{57}{chapter.14}
+\contentsline {chapter}{\chapternumberline {15}ULAE Estimation}{59}{chapter.15}
+\contentsline {section}{\numberline {15.1}Dollar-Based Techniques}{59}{section.15.1}
+\contentsline {subsection}{\numberline {15.1.1}Paid-to-Paid (Classical Technique)}{59}{subsection.15.1.1}
+\contentsline {subsection}{\numberline {15.1.2}Kittel Technique}{60}{subsection.15.1.2}
+\contentsline {subsection}{\numberline {15.1.3}Generalized Approach}{61}{subsection.15.1.3}
+\contentsline {subsection}{\numberline {15.1.4}Simplified Generalized Approach}{61}{subsection.15.1.4}
