@@ -1395,18 +1395,42 @@ As each consecutive claims-made policy effectively provides more coverage after 
 
 
 
+\chapter{Overview}
+There are a lot of considerations to take into account when selecting a method of estimation for ultimate claims, as not all techniques work in the same circumstances. Here are examples of considerations : 
+
+\subsection*{Having a complete understanding of the underlying data}
+understanding the data, the trends they display, as well as potential changes coming from a varying mix of business, underlying limits, reinsurance contracts, laws and regulation changes, etc. Operational changes from within the company should also not be overlooked, such as changes in case outstanding adequacy and claim settlement rates. 
+
+\subsection*{Taking credibility, regression and data smoothing into account}
+Whenever possible or appropriate, theses concepts should be incorporated in the analysis. That means looking at the volume of data and its consistency. Industry benchmark should also be reviewed. 
+
+\subsection*{Use retrospective analysis}
+You want to use the method that fits the best with the data. Whenever possible, making a retrospective analysis to see which methods was the most accurate in pasts years (given the new development observed) is certainly a good way of validating choices and assumptions. 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Development Technique}
 
 \section{Key Assumptions}
 In order to use the development technique, some assumptions have to be made :
 \begin{enumerate}
-	\item \textbf{The development of future claims will be similar to prior one;}
-	\item \textbf{For immature accident year, the claims observed tell something about the claims yet to be observed;}
+	\item \textbf{The development of future claims will be similar to prior one;}\\
+	\item \textbf{For immature accident year, the claims observed tell something about the claims yet to be observed;}\\
 	\item \textbf{Consistent \emph{claim processing} (no change in the speed of processing);}\\
 	If this assumption doesn't stand true, using the \emph{paid claims} would be a problem for estimating both the ultimate claims and the IBNR.\emph{ A decrease in the claim settlement rates would cause the \% of claims paid to be lower for the most recent diagonals}. This means that applying the \emph{LDFs} without adjustment would underestimate the IBNR and the ultimate claims. The opposite would also be true for an increase in the claim settlement rate. \\
 	\item \textbf{Consistent \emph{case outstanding adequacy};}\\
-	If this assumption isn't true, using \emph{reported claims} would be cause a problem when estimating the ultimate claims and the IBNR. \emph{An increase in case outstanding adequacy would translate to the \% of reported claims to be higher in the most recent diagonals}. This means that applying the historical \emph{LDFs} would overstate the IBNR and the ultimate claims. The opposite is also true for a decrease in case outstanding adequacy. 
+	If this assumption isn't true, using \emph{reported claims} would be cause a problem when estimating the ultimate claims and the IBNR. \emph{An increase in case outstanding adequacy would translate to the \% of reported claims to be higher in the most recent diagonals}. This means that applying the historical \emph{LDFs} would overstate the IBNR and the ultimate claims. The opposite is also true for a decrease in case outstanding adequacy. \\
 	
 	\item \textbf{A stable mix of business.}
 \end{enumerate}
@@ -1451,6 +1475,160 @@ It's important to not that whatever we use reported or paid claims, the expected
 The key assumption of the method is that unreported/unpaid claims will develop based on the expected claims. That means that the claims already reported/paid don't influence the ultimate claims as much as in the development technique. This is actually the main advantage of the technique : random fluctuation early in immature accident year do not distort the projections significantly. 
 
 Of course, having a changing is never ideal in the context of estimating unpaid claims and IBNR. The B-F method doesn't make exception. Here are some situations in which the estimates might not be accurate : 
+\begin{itemize}
+	\item \textbf{Changing loss ratio :}\\
+	As the expected claims rely on a estimation of the expected loss ratio, having a changing loss ratio will distort the results. One way to circumvent this is to adjust the expected loss ratio accordingly before calculating the expected claims. \\
+	\item \textbf{Changing case outstanding adequacy :}\\
+	This will obviously only affect the reported B-F method. The effect won't be as pronounced as with the development technique because of the credibility given to expected claims (which are unaffected by this change), but will still distort the results. \\
+	\item \textbf{Changing claim settlement rate :}\\
+	This affect the paid B-F method. As for changing case outstanding adequacy, this effect will be less than for the development technique. 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Cape Cod Technique}
+
+\section{Calculations}
+This method is very similar to the B-F method. It varies only in the calculations of the expected claim ratio (loss ratio). With B-F, the loss ratio can be judgementally determined ; with cthe Cape Cod method we always have a systematic way. The expected claim ratio (\emph{ECR}) is defined as:
+\begin{tcolorbox}[ams align*]
+ECR = \frac{\sum_{i = 1}^{n}(\text{Reported claims})_{i}}{\sum_{i= 1}^{n} (\text{On-Level Earned Premium})_{i} (\text{\% Reported})_{i}}
+\end{tcolorbox} 
+
+This means that the selected claim ratio for the method is the same for all accident year. The denominator $  (\text{On-Level Earned Premium})_{i} (\text{\% Reported})_{i} $ is often describe as \emph{Used-up Premium}. Note that the Cape Cod method is usually used with reported claims, but it would also work with paid claims. 
+
+Once the expected claim ratio is selected, there is a last step. We need to the bring the \emph{ECR} to the level of each of the accident years. 
+\begin{align*}
+ECR_{i} = ECR \times \frac{(\text{De-trend loss factor})_{i}}{(\text{De-trend premium factor})_{i}}
+\end{align*}
+where the $ (\text{de-trend factor})_{i} = 1/(\text{trend factor})_{i}  $. After having de-trended the \emph{ECRs}, we can calculate the expected claims for accident year $ i $ as 
+\begin{align*}
+(\text{Expected Claims})_{i} = ECR_{i} \times (\text{On-level Earned Prem.})_{i}.
+\end{align*}
+At this point, the method is the same as the B-F method, ie : 
+\begin{align*}
+\text{Ultimate Claims} = \text{Actual Reported Claims} + (\text{Expected Claims})(\text{\% Unreported})
+\end{align*}
+\section{Key Assumptions}
+This method basically has the same assumptions as the B-F method. 
+Its main advantage are :
+\begin{itemize}
+	\item In the case where you don't have access to the expected loss ratio from the company, this methods solves the problem. 
+	\item In the case of a \emph{changing loss ratio}, this method will likely produce better results since the loss ratio of more recent years is taken into account in the calculations of the \emph{ECR}.
+\end{itemize}
+
+It has some disadvantages : 
+\begin{itemize}
+	\item Can't be used for a new line of business, since you won't have data to calculate te \emph{ECR}. 
+	\item It's highly dependent on the appropriate on-level premiums.
+	\item If the data is volatile, B-F would perform better, since the \emph{ECR} would be highly volatile as well. 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\chapter{Frequency-Severity Techniques}
+
+There are three different methods using frequency-severity principles : 
+\begin{enumerate}
+	\item Using the Development technique on claim counts and severities separately;
+	\item Incorporate exposures and inflation to estimate the highly leveraged years;
+	\item Disposal rate technique.
+\end{enumerate}
+
+\section{Key Assumptions}
+The three main assumptions are : 
+\begin{itemize}
+	\item Claim count and severities will develop the same way they have in the past
+	\item The definition of claim counts stays the same throughout the experience period
+	\item The mix of business is homogeneous.
+\end{itemize}
+
+In using the disposal technique, we also have to assume that there are no significant partial payments (claims that are paid after they were closed).
+
+The \textbf{advantages} of frequency-severity techniques include:
+\begin{itemize}
+	\item The disposal rate technique only uses paid data, so it isn’t impacted by changes in case reserve adequacy;
+	\item Assumptions about inflation and expected claim disposal rates can be explicitly incorporated into the methods;
+	\item Gain greater insight into the claims process by understanding the rate of claim reporting and settlement and average dollar value separately.
+\end{itemize}
+
+
+The \textbf{disadvantages} of frequency-severity techniques include:
+\begin{itemize}
+	\item Estimates are highly sensitive to the assumed trend rate;
+	\item Changes in the definition of claim counts impact the estimates;
+	\item Changes in claim reporting or processing impact the estimates;
+	\item The methods require a relatively homogeneous mix of claims;
+	\item The data may not be available (i.e., claim counts may be unavailable).
+\end{itemize}
+
+
+
+
+
+\section{Disposal Rates Technique}
+In this method, we are incorporating a trend in the severities. This method uses the disposal rates to complete the triangle of claim count and severities. Then, we calculate the ultimate claims by multiplying the ultimate claim count by the ultimate severities. In order to do that, we of course need to develop the ultimate claim count for each accident year, since they are used to determine the selected disposal rates. 
+
+Here are the steps of the method : 
+
+\subsection*{Step 1 : Calculate and select disposal rates per maturity}
+As a reminder, disposal rates for accident year \emph{i} and age \emph{j} ($ D_{i,j} $) are defined as : 
+\begin{align*}
+D_{i,j} = \frac{\text{\# of Closed Claim Count}_{j}}{\text{\# of Ultimate \emph{Reported} Claim Count}_{i}}.
+\end{align*}
+\footnotesize*Of course, if we don't have the ultimate claim counts, we have to develop those first using the development technique. \normalsize
+
+
+
+\subsection*{Step 2 : Project the \emph{incremental} closed claim counts at each maturity and year}
+Basically, we are completing the bottom half of the \emph{incremental} claim count triangle. We  first define the following notations : 
+\begin{itemize}
+	\item $ IC_{i,j} $ : \emph{Incremental} claim count at accident year $ i $ and maturity $j $;
+	\item $ CC_{i,j} $ : \emph{Cumulative} claim count at accident year $ i $ and maturity $j $;
+	\item $ \hat{D}_{j} $ : Selected disposal rate for maturity $ j $;
+	\item $ UC_{i} $ : Ultimate claim count for accident year $ i $.
+\end{itemize}  as  and the  as $ CC_{i,j} $ , then the definition for $ IC_{i,j} $ is :
+
+With those notations, we can define :
+\begin{align*}
+IC_{i,j} = \left(\frac{UC_{i} - CC_{i,j-12}}{1- \hat{D}_{i,j-12}}\right)(\hat{D}_{i, j} - \hat{D}_{i,j-12}) 
+\end{align*}
+We can see this definition as the remaining claims yet to be reported times the percentage reported between the previous maturity and the current ones. 
+
+
+
+\subsection*{Step 3 : Select \emph{incremental trended} severities at each maturity}
+Starting with the triangle of \emph{incremental} severity, we want to trend all of the amount to the level of the last accident year of the experience data. That means the last year doesn't have to be trended. 
+
+After trending all of the triangle, we want to select a trended severity for all maturities so that we can multiply these by the incremental claim counts. In order to do that, we want to analyse the \emph{trended incremental} severity triangle and, just like when selecting an \emph{LDFs} for a maturity, select a trended severity. 
+
+
+
+\subsection*{Step 4 : Complete the incremental severities triangle}
+In order to complete the triangle, we de-trend the selected trended severities to the level of each accident year. 
+
+After completing this step, we are ready to calculate the incremental payments and the ultimate claims. 
+
+
+
+\subsection*{Step 5 : Calculate the incremental payments and ultimate claims per accident year}
+To calculate the incremental paid claims, as said before, we multiply the incremental claim count and the incremental severities calculated in the previous step. 
+
+Finally, to calculate the ultimate claims, we only have to sum up the incremental paid claims for all accident years. 
+
 
 
 
@@ -1943,10 +2121,31 @@ As seen in the previous definition, we define the ration $ \mathbf{W_{i}} $ as $
 	
 	
 	
+
+
+
+
+
+
+
+
+
+\chapter{Evaluating of techniques}
+
+To calculate the expected development between the current maturity and the next, the formula is conceptually identical to the formula using the disposal rate to project future incremental claim counts in the disposal rate technique of the frequency-severity techniques. 
+
+Using the reported claims, the expected development corresponds to the \emph{IBNR emergence}, since what is developing in the next period was not reported previously. 
+
+If the current maturity is $ j $, then using the reported claims development factors we calculate the IBNR emergence between maturity $ j $ and $ j+12 $ as : 
+\begin{align*}
+\text{IBNR emergence} = \left(\frac{(\text{Ult. Claims})_{j} - (\text{Cum. Rep. Claims})_{j}}{1 - (\text{\% Rep.})_{j}}\right)\Big[(\text{\% Rep.})_{j+ 12} - (\text{\% Rep.})_{j} \Big]
+\end{align*} 
+
 	
-	
-	
-	
+We could also calculate the expected \emph{paid} claims between maturity $ j $ and $ j + 12 $, using the paid claims and paid claims development factors. 
+\begin{align*}
+\text{Expected Paid Claims} = \left(\frac{(\text{Ult. Claims})_{j} - (\text{Cum. Pd. Claims})_{j}}{1 - (\text{\% Pd.})_{j}}\right)\Big[(\text{\% Pd.})_{j+ 12} - (\text{\% Pd.})_{j} \Big]
+\end{align*} 
 	
 	
 	
